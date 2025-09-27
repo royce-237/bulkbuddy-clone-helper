@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-products.jpg";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="relative bg-gradient-to-br from-muted to-muted/50 overflow-hidden">
       <div className="container mx-auto px-4 py-8">
@@ -31,7 +34,12 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="xl" className="shadow-2xl">
+              <Button 
+                variant="hero" 
+                size="xl" 
+                className="shadow-2xl"
+                onClick={() => navigate('/product-category/cannabis')}
+              >
                 Shop Now →
               </Button>
             </div>

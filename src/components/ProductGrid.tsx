@@ -1,6 +1,7 @@
 import { Heart, Star, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 
 const products = [
   {
@@ -66,6 +67,8 @@ const products = [
 ];
 
 const ProductGrid = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
@@ -79,7 +82,12 @@ const ProductGrid = () => {
               Mix & Match to Save Up to 45% OFF
             </p>
           </div>
-          <Button variant="outline">View All →</Button>
+          <Button 
+            variant="outline"
+            onClick={() => navigate('/product-category/cannabis')}
+          >
+            View All →
+          </Button>
         </div>
 
         {/* Product Grid */}

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 
 const categories = [
   {
@@ -44,6 +44,8 @@ const mainCategories = [
 ];
 
 const ProductCategories = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       {/* First Category Section */}
@@ -67,6 +69,7 @@ const ProductCategories = () => {
                       variant="hero"
                       size="sm"
                       className="group-hover:scale-105 transition-transform duration-200"
+                      onClick={() => navigate('/product-category/cannabis')}
                     >
                       {category.buttonText}
                     </Button>
@@ -111,6 +114,7 @@ const ProductCategories = () => {
                       variant="hero"
                       size="lg"
                       className="group-hover:scale-105 transition-transform duration-200"
+                      onClick={() => navigate('/product-category/cannabis')}
                     >
                       Shop Now →
                     </Button>
