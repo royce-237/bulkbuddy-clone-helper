@@ -6,6 +6,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Heart, Star, Grid, List, ShoppingCart } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const products = [
   {
@@ -111,6 +112,17 @@ const products = [
 
 const ProductCategory = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const navigate = useNavigate();
+
+  const handleProductClick = (productName: string) => {
+    // Convert product name to slug
+    const slug = productName
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[|]/g, '')
+      .replace(/[^\w-]+/g, '');
+    navigate(`/product/${slug}`);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -254,6 +266,7 @@ const ProductCategory = () => {
                         variant="hero"
                         size="sm"
                         className="absolute bottom-2 left-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        onClick={() => handleProductClick(product.name)}
                       >
                         <ShoppingCart className="h-4 w-4 mr-2" />
                         Add to Cart

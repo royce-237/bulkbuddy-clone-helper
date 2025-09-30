@@ -1,0 +1,258 @@
+import { useParams, useNavigate } from "react-router-dom";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Star, Minus, Plus, ShoppingCart } from "lucide-react";
+import { useState } from "react";
+
+// Product data (in real app, this would come from an API or database)
+const productData: Record<string, any> = {
+  "thc-dual-chamber-disposable-vape-pens-6ml": {
+    id: 1,
+    name: "THC Dual Chamber Disposable Vape Pens | 6ML",
+    price: 70.00,
+    priceRange: "$70.00",
+    rating: 5,
+    reviews: 1,
+    image: "https://images.unsplash.com/photo-1595475038665-8cd6d43c9bf4?w=600&h=600&fit=crop&crop=center",
+    images: [
+      "https://images.unsplash.com/photo-1595475038665-8cd6d43c9bf4?w=600&h=600&fit=crop&crop=center",
+      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=600&fit=crop&crop=center",
+    ],
+    categories: ["All Products", "Cannabis", "Vapes"],
+    sku: "N/A",
+    description: "Premium THC dual chamber disposable vape pen with 6ML capacity. Features smooth vapor production and high potency distillate.",
+    budSize: "6ML",
+    ratings: "(AAA+)",
+    texture: "Smooth & Flavorful",
+    flavour: "Various Strains Available",
+    medicalUsage: "Anxiety / Pain / Stress Relief",
+    thc: "85-90%",
+    cbd: "<1%",
+    batch: "Sept 27, 2025"
+  },
+  "premium-distillate-thc-disposable-vape-pens-1ml": {
+    id: 2,
+    name: "Premium Distillate THC Disposable Vape Pens | 1ML",
+    price: 30.00,
+    originalPrice: 35.00,
+    priceRange: "$30.00",
+    rating: 5,
+    reviews: 12,
+    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=600&fit=crop&crop=center",
+    images: [
+      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=600&fit=crop&crop=center",
+    ],
+    categories: ["All Products", "Cannabis", "Vapes"],
+    sku: "N/A",
+    description: "High-quality distillate THC disposable vape pen with 1ML capacity.",
+    budSize: "1ML",
+    ratings: "(AAA+)",
+    texture: "Smooth & Perfect Cure",
+    flavour: "Berry / Candy / Fruity",
+    medicalUsage: "Pain / Anxiety / Sleep",
+    thc: "80-85%",
+    cbd: "<1%",
+    batch: "Sept 27, 2025"
+  }
+};
+
+const weights = ["3.5 Grams", "7 Grams", "1/2 Ounce", "1 Ounce", "Quarter Pound", "Half Pound", "Pound"];
+
+const ProductDetail = () => {
+  const { slug } = useParams();
+  const navigate = useNavigate();
+  const [quantity, setQuantity] = useState(1);
+  const [selectedWeight, setSelectedWeight] = useState("3.5 Grams");
+  const [selectedImage, setSelectedImage] = useState(0);
+
+  // Get product data or use first product as fallback
+  const product = slug ? productData[slug] : Object.values(productData)[0];
+
+  if (!product) {
+    return <div>Product not found</div>;
+  }
+
+  const decrementQuantity = () => {
+    if (quantity > 1) setQuantity(quantity - 1);
+  };
+
+  const incrementQuantity = () => {
+    setQuantity(quantity + 1);
+  };
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      {/* Notice Banner */}
+      <div className="bg-red-600 text-white py-2 px-4 text-center text-sm">
+        <strong>Notice:</strong> Notice: Due to an unexpected Canada Post strike, all shipments will now be sent via UPS. Please note that we are unable to deliver to PO Boxes or rural addresses at this time. UPS shipping is a flat rate of $50, with <strong>Free Shipping on orders over $300.</strong> Thank you for your understanding and continued support. If you have any questions or concerns, please don't hesitate to contact us.
+      </div>
+
+      <main className="py-8">
+        <div className="container mx-auto px-4">
+          {/* Breadcrumb */}
+          <nav className="mb-6 text-sm text-muted-foreground">
+            <span className="cursor-pointer hover:text-foreground" onClick={() => navigate('/')}>Home</span>
+            <span className="mx-2">/</span>
+            <span className="cursor-pointer hover:text-foreground" onClick={() => navigate('/product-category/cannabis')}>Cannabis</span>
+            <span className="mx-2">/</span>
+            <span className="cursor-pointer hover:text-foreground" onClick={() => navigate('/product-category/cannabis')}>Vapes</span>
+            <span className="mx-2">/</span>
+            <span className="text-foreground">{product.name}</span>
+          </nav>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Product Images */}
+            <div className="space-y-4">
+              {/* Main Image */}
+              <div className="relative bg-card rounded-lg overflow-hidden border">
+                <img
+                  src={product.images?.[selectedImage] || product.image}
+                  alt={product.name}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              
+              {/* Thumbnail Images */}
+              {product.images && product.images.length > 1 && (
+                <div className="flex gap-2">
+                  {product.images.map((img: string, idx: number) => (
+                    <button
+                      key={idx}
+                      onClick={() => setSelectedImage(idx)}
+                      className={`relative w-20 h-20 rounded border-2 overflow-hidden ${
+                        selectedImage === idx ? 'border-primary' : 'border-border'
+                      }`}
+                    >
+                      <img src={img} alt={`${product.name} ${idx + 1}`} className="w-full h-full object-cover" />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Product Info */}
+            <div className="space-y-6">
+              <div>
+                <h1 className="text-3xl font-bold text-foreground mb-2">{product.name}</h1>
+                
+                {/* Categories */}
+                <div className="text-sm text-muted-foreground mb-2">
+                  Categories: {product.categories.join(", ")}
+                </div>
+
+                {/* Rating */}
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`w-4 h-4 ${
+                          i < product.rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  <span className="font-bold text-foreground">{product.rating.toFixed(2)}</span>
+                  <span className="text-sm text-muted-foreground">({product.reviews})</span>
+                  <span className="text-sm text-muted-foreground ml-2">SKU: {product.sku}</span>
+                </div>
+              </div>
+
+              {/* Product Details */}
+              <div className="space-y-2 text-sm">
+                <div><strong>Bud Size:</strong> {product.budSize}</div>
+                <div><strong>Ratings:</strong> {product.ratings}</div>
+                <div><strong>Texture:</strong> {product.texture}</div>
+                <div><strong>Flavour:</strong> {product.flavour}</div>
+                <div><strong>Medical Usage:</strong> {product.medicalUsage}</div>
+                <div><strong>THC:</strong> {product.thc} <strong>CBD:</strong> {product.cbd}</div>
+                <div><strong>Batch:</strong> {product.batch}</div>
+              </div>
+
+              {/* Price */}
+              <div className="text-3xl font-bold text-foreground">
+                {product.priceRange}
+              </div>
+
+              {/* Weight Selection */}
+              <div>
+                <div className="text-sm font-medium mb-2">Weight: <span className="text-primary">{selectedWeight}</span></div>
+                <div className="flex flex-wrap gap-2">
+                  {weights.map((weight) => (
+                    <Button
+                      key={weight}
+                      variant={selectedWeight === weight ? "default" : "outline"}
+                      size="sm"
+                      onClick={() => setSelectedWeight(weight)}
+                      className="text-xs"
+                    >
+                      {weight}
+                    </Button>
+                  ))}
+                </div>
+                <button className="text-sm text-primary mt-2">× Clear</button>
+              </div>
+
+              {/* Points */}
+              <div className="text-sm">
+                Purchase this product now and earn <strong>12 Points!</strong>
+              </div>
+
+              {/* Price with quantity */}
+              <div className="text-2xl font-bold text-foreground">
+                ${(product.price * quantity).toFixed(2)}
+              </div>
+
+              {/* Quantity and Add to Cart */}
+              <div className="flex gap-4 items-center">
+                <div className="flex items-center border rounded">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={decrementQuantity}
+                    className="h-10 w-10"
+                  >
+                    <Minus className="h-4 w-4" />
+                  </Button>
+                  <span className="px-4 py-2 min-w-[3rem] text-center">{quantity}</span>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={incrementQuantity}
+                    className="h-10 w-10"
+                  >
+                    <Plus className="h-4 w-4" />
+                  </Button>
+                </div>
+
+                <Button className="flex-1 bg-green-600 hover:bg-green-700 text-white h-12">
+                  <ShoppingCart className="h-5 w-5 mr-2" />
+                  Add to cart
+                </Button>
+              </div>
+
+              {/* Payment Methods */}
+              <div className="bg-card border rounded p-4 text-sm text-muted-foreground">
+                <strong>Payment:</strong> We accept Email Money Transfers & Bitcoin.
+              </div>
+            </div>
+          </div>
+
+          {/* Product Description */}
+          <div className="mt-12 prose prose-sm max-w-none">
+            <h2 className="text-2xl font-bold text-foreground mb-4">Description</h2>
+            <p className="text-muted-foreground">{product.description}</p>
+          </div>
+        </div>
+      </main>
+      
+      <Footer />
+    </div>
+  );
+};
+
+export default ProductDetail;

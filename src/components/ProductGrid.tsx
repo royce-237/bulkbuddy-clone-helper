@@ -69,6 +69,16 @@ const products = [
 const ProductGrid = () => {
   const navigate = useNavigate();
 
+  const handleProductClick = (productName: string) => {
+    // Convert product name to slug
+    const slug = productName
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[|]/g, '')
+      .replace(/[^\w-]+/g, '');
+    navigate(`/product/${slug}`);
+  };
+
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
@@ -126,6 +136,7 @@ const ProductGrid = () => {
                   variant="hero"
                   size="sm"
                   className="absolute bottom-2 left-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  onClick={() => handleProductClick(product.name)}
                 >
                   <ShoppingCart className="h-4 w-4 mr-2" />
                   Add to Cart
