@@ -73,9 +73,11 @@ const ProductGrid = () => {
     // Convert product name to slug
     const slug = productName
       .toLowerCase()
-      .replace(/\s+/g, '-')
-      .replace(/[|]/g, '')
-      .replace(/[^\w-]+/g, '');
+      .replace(/[|]/g, '') // Remove pipes first
+      .replace(/[^\w\s-]+/g, '') // Remove special characters except spaces and dashes
+      .replace(/\s+/g, '-') // Replace spaces with dashes
+      .replace(/-+/g, '-') // Collapse multiple dashes
+      .trim();
     navigate(`/product/${slug}`);
   };
 
