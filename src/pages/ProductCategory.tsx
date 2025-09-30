@@ -114,8 +114,8 @@ const ProductCategory = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const navigate = useNavigate();
 
-  const handleProductClick = (productName: string) => {
-    // Convert product name to slug
+  const handleProductClick = (product: any) => {
+    const productName = product.name;
     const slug = productName
       .toLowerCase()
       .replace(/[|]/g, '') // Remove pipes first
@@ -123,7 +123,7 @@ const ProductCategory = () => {
       .replace(/\s+/g, '-') // Replace spaces with dashes
       .replace(/-+/g, '-') // Collapse multiple dashes
       .trim();
-    navigate(`/product/${slug}`);
+    navigate(`/product/${slug}`, { state: { product } });
   };
 
   return (
@@ -268,7 +268,7 @@ const ProductCategory = () => {
                         variant="hero"
                         size="sm"
                         className="absolute bottom-2 left-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        onClick={() => handleProductClick(product.name)}
+                        onClick={() => handleProductClick(product)}
                       >
                         <ShoppingCart className="h-4 w-4 mr-2" />
                         Add to Cart

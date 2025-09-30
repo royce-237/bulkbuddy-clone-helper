@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -63,16 +63,21 @@ const weights = ["3.5 Grams", "7 Grams", "1/2 Ounce", "1 Ounce", "Quarter Pound"
 const ProductDetail = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const [quantity, setQuantity] = useState(1);
   const [selectedWeight, setSelectedWeight] = useState("3.5 Grams");
   const [selectedImage, setSelectedImage] = useState(0);
 
-  // Get product data or use first product as fallback
-  const product = slug ? productData[slug] : Object.values(productData)[0];
+  // Prefer product passed via navigation state, fallback to local dataset
+  const stateProduct = (location.state as any)?.product;
+  const product = stateProduct ?? (slug ? productData[slug] : Object.values(productData)[0]);
 
   if (!product) {
     return <div>Product not found</div>;
   }
+
+  const priceDisplay = product.priceRange || (typeof product.price === 'number' ? `$${product.price.toFixed(2)}` : '');
+  const unitPrice = typeof product.price === 'number' ? product.price : 0;
 
   const decrementQuantity = () => {
     if (quantity > 1) setQuantity(quantity - 1);
@@ -141,7 +146,7 @@ const ProductDetail = () => {
                 
                 {/* Categories */}
                 <div className="text-sm text-muted-foreground mb-2">
-                  Categories: {product.categories.join(", ")}
+                  Categories: {product.categories?.join(", ") || "All Products"}
                 </div>
 
                 {/* Rating */}
@@ -175,7 +180,7 @@ const ProductDetail = () => {
 
               {/* Price */}
               <div className="text-3xl font-bold text-foreground">
-                {product.priceRange}
+                {priceDisplay}
               </div>
 
               {/* Weight Selection */}
@@ -204,7 +209,7 @@ const ProductDetail = () => {
 
               {/* Price with quantity */}
               <div className="text-2xl font-bold text-foreground">
-                ${(product.price * quantity).toFixed(2)}
+                ${(unitPrice * quantity).toFixed(2)}
               </div>
 
               {/* Quantity and Add to Cart */}
