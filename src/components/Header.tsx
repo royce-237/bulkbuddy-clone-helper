@@ -20,7 +20,9 @@ const Header = () => {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center">
-              <img src={logo} alt="BulkBuddy" className="h-8 w-auto" />
+              <a href="/">
+                <img src={logo} alt="BulkBuddy" className="h-8 w-auto" />
+              </a>
             </div>
 
             {/* Search Bar */}
@@ -58,26 +60,17 @@ const Header = () => {
         <nav className="border-t bg-background">
           <div className="container mx-auto px-4">
             <div className="flex items-center gap-8 h-12 overflow-x-auto">
-              <Button variant="ghost" size="sm" className="whitespace-nowrap">
-                All Categories
+              <Button variant="ghost" size="sm" className="whitespace-nowrap" asChild>
+                <a href="/about-us">About Us</a>
               </Button>
-              <Button variant="ghost" size="sm" className="whitespace-nowrap">
-                Electronics
+              <Button variant="ghost" size="sm" className="whitespace-nowrap" asChild>
+                <a href="/faq">FAQ</a>
               </Button>
-              <Button variant="ghost" size="sm" className="whitespace-nowrap">
-                Home & Garden
+              <Button variant="ghost" size="sm" className="whitespace-nowrap" asChild>
+                <a href="/points-rewards">Points & Rewards</a>
               </Button>
-              <Button variant="ghost" size="sm" className="whitespace-nowrap">
-                Fashion
-              </Button>
-              <Button variant="ghost" size="sm" className="whitespace-nowrap">
-                Sports
-              </Button>
-              <Button variant="ghost" size="sm" className="whitespace-nowrap">
-                Health & Beauty
-              </Button>
-              <Button variant="ghost" size="sm" className="whitespace-nowrap">
-                Accessories
+              <Button variant="ghost" size="sm" className="whitespace-nowrap" asChild>
+                <a href="/contact-us">Contact Us</a>
               </Button>
               <div className="ml-auto">
                 <Button variant="ghost" size="sm" className="text-destructive font-medium">
