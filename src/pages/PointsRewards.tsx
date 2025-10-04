@@ -36,11 +36,11 @@ const PointsRewards = () => {
 
         {/* Two Images Side by Side */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div>
-            <img src={bbPointsReview} alt="50 BB Point Review a product" className="w-full rounded-lg shadow-lg" />
+          <div className="h-full">
+            <img src={bbPointsReview} alt="50 BB Point Review a product" className="w-full h-full object-cover rounded-lg" />
           </div>
-          <div>
-            <img src={referFriendBanner} alt="Refer a Friend Program" className="w-full rounded-lg shadow-lg" />
+          <div className="h-full">
+            <img src={referFriendBanner} alt="Refer a Friend Program" className="w-full h-full object-cover rounded-lg" />
           </div>
         </div>
 
