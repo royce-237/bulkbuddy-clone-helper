@@ -11,100 +11,221 @@ import { useNavigate } from "react-router-dom";
 const products = [
   {
     id: 1,
-    name: "THC Dual Chamber Disposable Vape Pens | 6ML",
-    price: 70.00,
-    originalPrice: null,
+    name: "Chocolate Kush",
+    category: "Indica",
+    priceRange: "$12.00 - $675.00",
     rating: 5,
-    reviews: 1,
-    image: "https://images.unsplash.com/photo-1595475038665-8cd6d43c9bf4?w=300&h=300&fit=crop&crop=center",
+    reviews: 87,
+    image: "https://images.unsplash.com/photo-1605878863885-094e0c3c9fdb?w=300&h=300&fit=crop",
     inStock: true,
     salePercentage: null
   },
   {
     id: 2,
-    name: "Premium Distillate THC Disposable Vape Pens | 1ML",
-    price: 30.00,
-    originalPrice: 35.00,
+    name: "Chocolate Thunder",
+    category: "Sativa",
+    priceRange: "$12.00 - $22.00",
     rating: 5,
-    reviews: 12,
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=300&fit=crop&crop=center",
+    reviews: 166,
+    image: "https://images.unsplash.com/photo-1601739879461-e373f0ff2149?w=300&h=300&fit=crop",
     inStock: true,
-    salePercentage: 15
+    salePercentage: null
   },
   {
     id: 3,
-    name: "Premium Distillate THC Disposable Vape Pens | 2ML",
-    price: 40.00,
-    originalPrice: 45.00,
-    rating: 5,
-    reviews: 4,
-    image: "https://images.unsplash.com/photo-1607473681481-72abb1152aa6?w=300&h=300&fit=crop&crop=center",
+    name: "$39/oz *PROMO* Mixed Strain (POPCORN)",
+    category: null,
+    priceRange: "$39.00 - $139.00",
+    rating: 4.5,
+    reviews: 487,
+    image: "https://images.unsplash.com/photo-1603909945879-54e78f773dc8?w=300&h=300&fit=crop",
     inStock: true,
-    salePercentage: 12
+    salePercentage: 65
   },
   {
     id: 4,
-    name: "Premium Distillate THC Disposable Vape Pens | 3ML",
-    price: 50.00,
-    originalPrice: 55.00,
-    rating: 5,
-    reviews: 6,
-    image: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=300&h=300&fit=crop&crop=center",
+    name: "$55/oz *Promo*Mystery AA-AAAA Weed Ounce",
+    category: null,
+    priceRange: "$55.00 - $190.00",
+    rating: 4.5,
+    reviews: 748,
+    image: "https://images.unsplash.com/photo-1612524424827-a0e0c68c1f95?w=300&h=300&fit=crop",
     inStock: true,
-    salePercentage: 9
+    salePercentage: 54
   },
   {
     id: 5,
-    name: "Premium Distillate THC Disposable Vape Pens | 5ML",
-    price: 55.00,
-    originalPrice: 60.00,
-    rating: 5,
-    reviews: 8,
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=300&fit=crop&crop=center",
+    name: "9 Pound Hammer",
+    category: "Indica",
+    priceRange: "$12.00",
+    rating: 4.5,
+    reviews: 139,
+    image: "https://images.unsplash.com/photo-1605878864842-d4ab4777c2fc?w=300&h=300&fit=crop",
     inStock: true,
-    salePercentage: 18
+    salePercentage: null
   },
   {
     id: 6,
-    name: "Premium Dual Chamber Vape Pens | 8 ML (4+4 G) | So High",
-    price: 100.00,
-    originalPrice: null,
+    name: "94 Monkey",
+    category: "Indica",
+    priceRange: "$12.00 - $725.00",
     rating: 5,
-    reviews: 1,
-    image: "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=300&h=300&fit=crop&crop=center",
+    reviews: 170,
+    image: "https://images.unsplash.com/photo-1601739878544-3e04439b83fd?w=300&h=300&fit=crop",
     inStock: true,
     salePercentage: null
   },
   {
     id: 7,
-    name: "Premium Distillate THC Vape Carts | 1ML | So High Extracts",
-    price: 30.00,
-    originalPrice: 35.00,
+    name: "Premium Shake/Trim (Gelato)",
+    category: null,
+    priceRange: "$12.00 - $200.00",
     rating: 5,
-    reviews: 5,
-    image: "https://images.unsplash.com/photo-1595475038665-8cd6d43c9bf4?w=300&h=300&fit=crop&crop=center",
+    reviews: 180,
+    image: "https://images.unsplash.com/photo-1560750461-121f1d0afa6e?w=300&h=300&fit=crop",
     inStock: true,
-    salePercentage: 50
+    salePercentage: null
   },
   {
     id: 8,
-    name: "Premium Distillate THC Vape Carts | White Tips",
-    price: 30.00,
-    originalPrice: 35.00,
+    name: "AAA+ Shake/Trim (4 Star General)",
+    category: null,
+    priceRange: "$12.00 - $200.00",
     rating: 5,
-    reviews: 340,
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=300&h=300&fit=crop&crop=center",
+    reviews: 171,
+    image: "https://images.unsplash.com/photo-1608336979521-9fbb349c2f03?w=300&h=300&fit=crop",
     inStock: true,
-    salePercentage: 18
+    salePercentage: null
   },
   {
     id: 9,
-    name: "Shatter THC Vape Cartridges | 510 Thread 1.0ML | XO",
-    price: 38.00,
-    originalPrice: null,
+    name: "Shake/Trim (Pink Kush)",
+    category: null,
+    priceRange: "$12.00 - $65.00",
+    rating: 4.5,
+    reviews: 133,
+    image: "https://images.unsplash.com/photo-1619094108846-dddbef0deab5?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 10,
+    name: "Shake/Trim Ace Killer OG Shake Weed",
+    category: null,
+    priceRange: "$12.00",
+    rating: 4.5,
+    reviews: 18,
+    image: "https://images.unsplash.com/photo-1601739878038-5f58ea0b2faf?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 11,
+    name: "AAA+ Shake/Trim Greasy Pink Premium Shake",
+    category: null,
+    priceRange: "$12.00 - $200.00",
     rating: 5,
-    reviews: 123,
-    image: "https://images.unsplash.com/photo-1607473681481-72abb1152aa6?w=300&h=300&fit=crop&crop=center",
+    reviews: 50,
+    image: "https://images.unsplash.com/photo-1610295770731-aea59a17fbc6?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 12,
+    name: "Shake/Trim Master Kush Premium Shake Weed",
+    category: null,
+    priceRange: "$12.00 - $200.00",
+    rating: 5,
+    reviews: 35,
+    image: "https://images.unsplash.com/photo-1605878863887-3b65932b8bb3?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 13,
+    name: "Ace Killer OG",
+    category: "Indica",
+    priceRange: "$11.00 - $73.00",
+    rating: 5,
+    reviews: 92,
+    image: "https://images.unsplash.com/photo-1603909945879-54e78f773dc8?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 14,
+    name: "Afghan Death Bubba",
+    category: "Indica",
+    priceRange: "$12.00 - $725.00",
+    rating: 5,
+    reviews: 133,
+    image: "https://images.unsplash.com/photo-1612524424827-a0e0c68c1f95?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 15,
+    name: "Alaskan Thunder Fuck",
+    category: "Sativa",
+    priceRange: "$12.00 - $84.00",
+    rating: 5,
+    reviews: 534,
+    image: "https://images.unsplash.com/photo-1605878864842-d4ab4777c2fc?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 16,
+    name: "Alien Banana Candy",
+    category: "Indica",
+    priceRange: "$12.00 - $725.00",
+    rating: 5,
+    reviews: 147,
+    image: "https://images.unsplash.com/photo-1601739878544-3e04439b83fd?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 17,
+    name: "Alien OG",
+    category: "Hybrid",
+    priceRange: "$12.00 - $675.00",
+    rating: 5,
+    reviews: 157,
+    image: "https://images.unsplash.com/photo-1560750461-121f1d0afa6e?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 18,
+    name: "Animal Cookies",
+    category: "Indica",
+    priceRange: "$12.00 - $43.00",
+    rating: 4.5,
+    reviews: 70,
+    image: "https://images.unsplash.com/photo-1608336979521-9fbb349c2f03?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 19,
+    name: "Atomic Blueberry",
+    category: "Indica",
+    priceRange: "$13.00 - $775.00",
+    rating: 4.5,
+    reviews: 187,
+    image: "https://images.unsplash.com/photo-1619094108846-dddbef0deab5?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 20,
+    name: "Atomic Bomb",
+    category: "Hybrid",
+    priceRange: "$12.00 - $40.00",
+    rating: 5,
+    reviews: 135,
+    image: "https://images.unsplash.com/photo-1601739878038-5f58ea0b2faf?w=300&h=300&fit=crop",
     inStock: true,
     salePercentage: null
   }
@@ -256,29 +377,35 @@ const ProductCategory = () => {
                     )}
 
                     {/* Product Image */}
-                    <div className="relative overflow-hidden bg-gray-50">
+                    <div className="relative overflow-hidden bg-gray-50 cursor-pointer" onClick={() => handleProductClick(product)}>
                       <img
                         src={product.image}
                         alt={product.name}
                         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      
-                      {/* Add to Cart Button */}
-                      <Button
-                        variant="hero"
-                        size="sm"
-                        className="absolute bottom-2 left-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        onClick={() => handleProductClick(product)}
-                      >
-                        <ShoppingCart className="h-4 w-4 mr-2" />
-                        Add to Cart
-                      </Button>
                     </div>
 
                     {/* Product Info */}
                     <div className="p-4">
+                      {/* Category Badge */}
+                      {product.category && (
+                        <div className="mb-2">
+                          <span className={`inline-block px-3 py-1 rounded text-xs font-medium text-white ${
+                            product.category === 'Indica' ? 'bg-purple-600' :
+                            product.category === 'Sativa' ? 'bg-orange-500' :
+                            product.category === 'Hybrid' ? 'bg-green-600' :
+                            'bg-gray-500'
+                          }`}>
+                            {product.category}
+                          </span>
+                        </div>
+                      )}
+
                       {/* Product Name */}
-                      <h3 className="font-medium text-card-foreground mb-2 text-sm leading-tight line-clamp-2">
+                      <h3 
+                        className="font-medium text-card-foreground mb-2 text-sm leading-tight line-clamp-2 cursor-pointer hover:text-primary"
+                        onClick={() => handleProductClick(product)}
+                      >
                         {product.name}
                       </h3>
 
@@ -288,8 +415,10 @@ const ProductCategory = () => {
                           <Star
                             key={i}
                             className={`w-3 h-3 ${
-                              i < product.rating
+                              i < Math.floor(product.rating)
                                 ? "fill-yellow-400 text-yellow-400"
+                                : i < product.rating
+                                ? "fill-yellow-400/50 text-yellow-400"
                                 : "text-gray-300"
                             }`}
                           />
@@ -300,14 +429,9 @@ const ProductCategory = () => {
                       </div>
 
                       {/* Price */}
-                      <div className="flex items-center gap-2 mb-3">
-                        {product.originalPrice && (
-                          <span className="text-xs text-muted-foreground line-through">
-                            ${product.originalPrice.toFixed(2)}
-                          </span>
-                        )}
-                        <span className="font-bold text-foreground">
-                          ${product.price.toFixed(2)}
+                      <div className="mb-3">
+                        <span className="font-bold text-foreground text-sm">
+                          {product.priceRange}
                         </span>
                       </div>
 
@@ -315,6 +439,7 @@ const ProductCategory = () => {
                       <Button 
                         className="w-full bg-green-600 text-white hover:bg-green-700 text-xs h-8"
                         disabled={!product.inStock}
+                        onClick={() => handleProductClick(product)}
                       >
                         {product.inStock ? 'IN STOCK' : 'OUT OF STOCK'}
                       </Button>
@@ -323,10 +448,67 @@ const ProductCategory = () => {
                 ))}
               </div>
 
+              {/* Pagination */}
+              <div className="flex justify-center gap-2 mt-8">
+                <Button variant="default" className="bg-green-600 hover:bg-green-700 h-10 w-10">
+                  1
+                </Button>
+                <Button variant="outline" className="h-10 w-10">
+                  2
+                </Button>
+                <Button variant="outline" className="h-10 w-10">
+                  3
+                </Button>
+                <Button variant="outline" className="h-10 w-10">
+                  →
+                </Button>
+              </div>
+
               {/* Description */}
-              <div className="mt-12 prose prose-sm max-w-none">
+              <div className="mt-12 space-y-6">
+                <h2 className="text-2xl font-bold text-foreground">Cannabis Flower</h2>
+                
                 <p className="text-muted-foreground">
-                  Looking for premium <strong>weed vapes in Canada?</strong> At Bulk Buddy, we offer a wide selection of THC and CBD vape pens and cartridges for a smooth, discreet, and flavorful experience. Perfect for on-the-go cannabis lovers who prioritize convenience and potency.
+                  Discover the largest selection of cannabis strains in Canada at Bulk Buddy. Our extensive range includes{" "}
+                  <a href="#" className="text-primary hover:underline">Indica</a>,{" "}
+                  <a href="#" className="text-primary hover:underline">Sativa</a>, &{" "}
+                  <a href="#" className="text-primary hover:underline">Hybrid</a>{" "}
+                  strains, ensuring you find the perfect match for your needs. Each strain is rigorously lab-tested for safety and highest quality. Our expert growers ensure every cannabis strain is harvested and cured to maintain cannabinoid purity and potency.
+                </p>
+                
+                <p className="text-muted-foreground">
+                  Whether you're looking for medicinal cannabis, relaxation, or stimulation, we offer premium cannabis flowers that guarantee satisfaction. Our team of experts is here to help you navigate our extensive strains list to find the perfect match.
+                </p>
+                
+                <p className="text-muted-foreground">
+                  <a href="#" className="text-primary hover:underline">Buy weed online</a>{" "}
+                  in Canada at Bulk Buddy, your top destination for quality cannabis products. Find the best cannabis store in Canada with our unparalleled selection and expert guidance.
+                </p>
+                
+                <h3 className="text-xl font-bold text-foreground mt-6">What Is Cannabis?</h3>
+                
+                <p className="text-muted-foreground">
+                  Cannabis, also known as weed or marijuana, is a plant famous for its psychoactive and medicinal properties. The main chemical compounds in cannabis are cannabinoids, particularly THC (Tetrahydrocannabinol) and CBD (Cannabidiol).{" "}
+                  <a href="#" className="text-primary hover:underline">THC</a>{" "}
+                  is known for producing a "high" due to its psychoactive effects, while{" "}
+                  <a href="#" className="text-primary hover:underline">CBD</a>{" "}
+                  is renowned for its therapeutic benefits without causing a high.
+                </p>
+                
+                <p className="text-muted-foreground">
+                  Historically, people have used marijuana for both medical and recreational purposes. It is also an integral part of many religious and cultural rituals. Today, cannabis is the subject of extensive research due to its potential to support and alleviate various medical conditions.
+                </p>
+                
+                <p className="text-muted-foreground">
+                  Many individuals use cannabis for its relaxing and euphoric effects. It is commonly used to manage pain, reduce inflammation, and relieve nausea. Cannabis is frequently sought as a treatment for conditions such as anxiety, depression, glaucoma, and muscle spasms from multiple sclerosis. Additionally, it is effective in alleviating symptoms for chemotherapy patients, such as stimulating appetite and managing sleep disorders.
+                </p>
+                
+                <p className="text-muted-foreground">
+                  One of the most common uses of cannabis is for chronic pain relief. It is considered a safer alternative to opioids and has proven very effective when other pain medications have failed.
+                </p>
+                
+                <p className="text-muted-foreground">
+                  In summary, cannabis offers a range of benefits for both medical and recreational users. Its popularity continues to grow as more people discover its potential for improving quality of life.
                 </p>
               </div>
             </div>

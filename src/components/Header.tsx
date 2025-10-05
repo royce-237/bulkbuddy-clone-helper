@@ -75,9 +75,11 @@ const Header = () => {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start" className="w-56 bg-background z-50">
-                  <DropdownMenuItem className="cursor-pointer">
-                    <span className="flex-1">Cannabis</span>
-                    <ChevronRight className="h-4 w-4" />
+                  <DropdownMenuItem className="cursor-pointer" asChild>
+                    <a href="/product-category/cannabis" className="flex items-center w-full">
+                      <span className="flex-1">Cannabis</span>
+                      <ChevronRight className="h-4 w-4" />
+                    </a>
                   </DropdownMenuItem>
                   <DropdownMenuItem className="cursor-pointer">
                     <span className="flex-1">Concentrates</span>
