@@ -1,6 +1,12 @@
-import { Search, ShoppingCart, User, Menu } from "lucide-react";
+import { Search, ShoppingCart, User, Menu, Grid2x2, ChevronDown, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
@@ -60,6 +66,43 @@ const Header = () => {
         <nav className="border-t bg-background">
           <div className="container mx-auto px-4">
             <div className="flex items-center gap-8 h-12 overflow-x-auto">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="sm" className="whitespace-nowrap gap-2">
+                    <Grid2x2 className="h-4 w-4" />
+                    All Categories
+                    <ChevronDown className="h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="w-56 bg-background z-50">
+                  <DropdownMenuItem className="cursor-pointer">
+                    <span className="flex-1">Cannabis</span>
+                    <ChevronRight className="h-4 w-4" />
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer">
+                    <span className="flex-1">Concentrates</span>
+                    <ChevronRight className="h-4 w-4" />
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer">
+                    <span className="flex-1">Vapes</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer">
+                    <span className="flex-1">Edibles</span>
+                    <ChevronRight className="h-4 w-4" />
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer">
+                    <span className="flex-1">CBD</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer">
+                    <span className="flex-1">Accessories</span>
+                    <ChevronRight className="h-4 w-4" />
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer">
+                    <span className="flex-1">Sale</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              
               <Button variant="ghost" size="sm" className="whitespace-nowrap" asChild>
                 <a href="/about-us">About Us</a>
               </Button>
