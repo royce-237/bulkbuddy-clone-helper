@@ -6,9 +6,9 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Heart, Star, Grid, List, ShoppingCart } from "lucide-react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-const products = [
+const cannabisProducts = [
   {
     id: 1,
     name: "Chocolate Kush",
@@ -231,9 +231,239 @@ const products = [
   }
 ];
 
+const concentratesProducts = [
+  {
+    id: 1,
+    name: "Chocolate Rain Budder",
+    category: "Budder",
+    priceRange: "$42.00 - $73.00",
+    rating: 5,
+    reviews: 35,
+    image: "https://images.unsplash.com/photo-1608839175115-fa1e9c0e9c0d?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 2,
+    name: "9 Pound Hammer Kief",
+    category: "Kief",
+    priceRange: "$14.00 - $82.00",
+    rating: 5,
+    reviews: 98,
+    image: "https://images.unsplash.com/photo-1605878863885-094e0c3c9fdb?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: 18
+  },
+  {
+    id: 3,
+    name: "9 Pound Hammer THCa Sugar Diamonds",
+    category: "THCa Diamond",
+    priceRange: "$22.00 - $260.00",
+    rating: 5,
+    reviews: 46,
+    image: "https://images.unsplash.com/photo-1608336979521-9fbb349c2f03?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 4,
+    name: "A-Bomb Budder",
+    category: "Budder",
+    priceRange: "$72.00 - $73.00",
+    rating: 5,
+    reviews: 30,
+    image: "https://images.unsplash.com/photo-1619094108846-dddbef0deab5?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 5,
+    name: "Ace of Spade THCa Sugar",
+    category: "THCa Diamond",
+    priceRange: "$22.00 - $260.00",
+    rating: 4.5,
+    reviews: 28,
+    image: "https://images.unsplash.com/photo-1560750461-121f1d0afa6e?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 6,
+    name: "Bentley Hash",
+    category: "Hash",
+    priceRange: "$10.00 - $641.00",
+    rating: 4.5,
+    reviews: 69,
+    image: "https://images.unsplash.com/photo-1601739878544-3e04439b83fd?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 7,
+    name: "Berry White Shatter",
+    category: "Shatter",
+    priceRange: "$21.00 - $250.00",
+    rating: 4.5,
+    reviews: 14,
+    image: "https://images.unsplash.com/photo-1612524424827-a0e0c68c1f95?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 8,
+    name: "Better Than Bubba Live Resin",
+    category: "Live Resin",
+    priceRange: "$42.00 - $73.00",
+    rating: 5,
+    reviews: 34,
+    image: "https://images.unsplash.com/photo-1608839175115-fa1e9c0e9c0d?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 9,
+    name: "Bio-Jesus Budder",
+    category: "Budder",
+    priceRange: "$22.00 - $260.00",
+    rating: 5,
+    reviews: 36,
+    image: "https://images.unsplash.com/photo-1619094108846-dddbef0deab5?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 10,
+    name: "Black Diamond Kief",
+    category: "Kief",
+    priceRange: "$14.00 - $26.00",
+    rating: 5,
+    reviews: 41,
+    image: "https://images.unsplash.com/photo-1605878863885-094e0c3c9fdb?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: 18
+  },
+  {
+    id: 11,
+    name: "Blue Cheese Live Resin",
+    category: "Live Resin",
+    priceRange: "$42.00 - $73.00",
+    rating: 4.5,
+    reviews: 17,
+    image: "https://images.unsplash.com/photo-1608839175115-fa1e9c0e9c0d?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 12,
+    name: "Blue Cheese Shatter",
+    category: "Shatter",
+    priceRange: "$21.00 - $250.00",
+    rating: 4.5,
+    reviews: 24,
+    image: "https://images.unsplash.com/photo-1612524424827-a0e0c68c1f95?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 13,
+    name: "Blue Gelato Budder",
+    category: "Budder",
+    priceRange: "$42.00 - $73.00",
+    rating: 5,
+    reviews: 24,
+    image: "https://images.unsplash.com/photo-1619094108846-dddbef0deab5?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 14,
+    name: "Blue Zkittlez Budder",
+    category: "Budder",
+    priceRange: "$42.00 - $73.00",
+    rating: 5,
+    reviews: 36,
+    image: "https://images.unsplash.com/photo-1608336979521-9fbb349c2f03?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 15,
+    name: "Princess Leia Live Resin",
+    category: "Live Resin",
+    priceRange: "$42.00 - $73.00",
+    rating: 5,
+    reviews: 41,
+    image: "https://images.unsplash.com/photo-1608839175115-fa1e9c0e9c0d?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 16,
+    name: "Gorilla Glue Hash",
+    category: "Hash",
+    priceRange: "$10.00 - $641.00",
+    rating: 5,
+    reviews: 52,
+    image: "https://images.unsplash.com/photo-1601739878544-3e04439b83fd?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 17,
+    name: "Strawberry Cough Shatter",
+    category: "Shatter",
+    priceRange: "$21.00 - $250.00",
+    rating: 4.5,
+    reviews: 19,
+    image: "https://images.unsplash.com/photo-1612524424827-a0e0c68c1f95?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 18,
+    name: "Wedding Cake Budder",
+    category: "Budder",
+    priceRange: "$42.00 - $73.00",
+    rating: 5,
+    reviews: 42,
+    image: "https://images.unsplash.com/photo-1619094108846-dddbef0deab5?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 19,
+    name: "White Widow Live Resin",
+    category: "Live Resin",
+    priceRange: "$42.00 - $73.00",
+    rating: 5,
+    reviews: 38,
+    image: "https://images.unsplash.com/photo-1608839175115-fa1e9c0e9c0d?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 20,
+    name: "Zombie Kush Distillate",
+    category: "Distillate",
+    priceRange: "$21.00",
+    rating: 4.5,
+    reviews: 15,
+    image: "https://images.unsplash.com/photo-1560750461-121f1d0afa6e?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  }
+];
+
 const ProductCategory = () => {
+  const { category } = useParams();
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const navigate = useNavigate();
+  
+  const products = category === 'concentrates' ? concentratesProducts : cannabisProducts;
+  const categoryTitle = category === 'concentrates' ? 'Cannabis Concentrates' : 'Cannabis Flower';
+  const categoryDescription = category === 'concentrates' 
+    ? "Explore our top-tier range of cannabis concentrates in Canada, perfect for users seeking high potency and fast-acting effects. Bulk Buddy brings you expertly crafted shatter, budder, hash, and more—all lab-tested and ready to elevate your experience."
+    : "Discover the largest selection of cannabis strains in Canada at Bulk Buddy. Our extensive range includes Indica, Sativa, & Hybrid strains, ensuring you find the perfect match for your needs.";
 
   const handleProductClick = (product: any) => {
     const productName = product.name;
@@ -394,6 +624,13 @@ const ProductCategory = () => {
                             product.category === 'Indica' ? 'bg-purple-600' :
                             product.category === 'Sativa' ? 'bg-orange-500' :
                             product.category === 'Hybrid' ? 'bg-green-600' :
+                            product.category === 'Budder' ? 'bg-blue-600' :
+                            product.category === 'Shatter' ? 'bg-amber-600' :
+                            product.category === 'Live Resin' ? 'bg-yellow-600' :
+                            product.category === 'Hash' ? 'bg-emerald-600' :
+                            product.category === 'Kief' ? 'bg-lime-600' :
+                            product.category === 'THCa Diamond' ? 'bg-cyan-600' :
+                            product.category === 'Distillate' ? 'bg-rose-600' :
                             'bg-gray-500'
                           }`}>
                             {product.category}
@@ -466,50 +703,73 @@ const ProductCategory = () => {
 
               {/* Description */}
               <div className="mt-12 space-y-6">
-                <h2 className="text-2xl font-bold text-foreground">Cannabis Flower</h2>
+                <h2 className="text-2xl font-bold text-foreground">{categoryTitle}</h2>
                 
                 <p className="text-muted-foreground">
-                  Discover the largest selection of cannabis strains in Canada at Bulk Buddy. Our extensive range includes{" "}
-                  <a href="#" className="text-primary hover:underline">Indica</a>,{" "}
-                  <a href="#" className="text-primary hover:underline">Sativa</a>, &{" "}
-                  <a href="#" className="text-primary hover:underline">Hybrid</a>{" "}
-                  strains, ensuring you find the perfect match for your needs. Each strain is rigorously lab-tested for safety and highest quality. Our expert growers ensure every cannabis strain is harvested and cured to maintain cannabinoid purity and potency.
+                  {categoryDescription}
                 </p>
                 
-                <p className="text-muted-foreground">
-                  Whether you're looking for medicinal cannabis, relaxation, or stimulation, we offer premium cannabis flowers that guarantee satisfaction. Our team of experts is here to help you navigate our extensive strains list to find the perfect match.
-                </p>
-                
-                <p className="text-muted-foreground">
-                  <a href="#" className="text-primary hover:underline">Buy weed online</a>{" "}
-                  in Canada at Bulk Buddy, your top destination for quality cannabis products. Find the best cannabis store in Canada with our unparalleled selection and expert guidance.
-                </p>
-                
-                <h3 className="text-xl font-bold text-foreground mt-6">What Is Cannabis?</h3>
-                
-                <p className="text-muted-foreground">
-                  Cannabis, also known as weed or marijuana, is a plant famous for its psychoactive and medicinal properties. The main chemical compounds in cannabis are cannabinoids, particularly THC (Tetrahydrocannabinol) and CBD (Cannabidiol).{" "}
-                  <a href="#" className="text-primary hover:underline">THC</a>{" "}
-                  is known for producing a "high" due to its psychoactive effects, while{" "}
-                  <a href="#" className="text-primary hover:underline">CBD</a>{" "}
-                  is renowned for its therapeutic benefits without causing a high.
-                </p>
-                
-                <p className="text-muted-foreground">
-                  Historically, people have used marijuana for both medical and recreational purposes. It is also an integral part of many religious and cultural rituals. Today, cannabis is the subject of extensive research due to its potential to support and alleviate various medical conditions.
-                </p>
-                
-                <p className="text-muted-foreground">
-                  Many individuals use cannabis for its relaxing and euphoric effects. It is commonly used to manage pain, reduce inflammation, and relieve nausea. Cannabis is frequently sought as a treatment for conditions such as anxiety, depression, glaucoma, and muscle spasms from multiple sclerosis. Additionally, it is effective in alleviating symptoms for chemotherapy patients, such as stimulating appetite and managing sleep disorders.
-                </p>
-                
-                <p className="text-muted-foreground">
-                  One of the most common uses of cannabis is for chronic pain relief. It is considered a safer alternative to opioids and has proven very effective when other pain medications have failed.
-                </p>
-                
-                <p className="text-muted-foreground">
-                  In summary, cannabis offers a range of benefits for both medical and recreational users. Its popularity continues to grow as more people discover its potential for improving quality of life.
-                </p>
+                {category === 'concentrates' ? (
+                  <>
+                    <h3 className="text-xl font-bold text-foreground mt-6">What Are Cannabis Concentrates?</h3>
+                    
+                    <p className="text-muted-foreground">
+                      Cannabis concentrates are highly potent extracts derived from the cannabis plant. They contain significantly higher levels of cannabinoids, particularly{" "}
+                      <a href="#" className="text-primary hover:underline">THC</a>{" "}
+                      and{" "}
+                      <a href="#" className="text-primary hover:underline">CBD</a>, compared to traditional flower. Popular concentrate types include shatter, budder, live resin, hash, kief, distillate, and THCa diamonds.
+                    </p>
+                    
+                    <p className="text-muted-foreground">
+                      Concentrates are created through various extraction methods that isolate and preserve the most desirable compounds from the cannabis plant. The result is a product that delivers powerful effects with smaller amounts, making them ideal for experienced users and those seeking fast-acting relief.
+                    </p>
+                    
+                    <p className="text-muted-foreground">
+                      At Bulk Buddy, all our concentrates are lab-tested to ensure purity, potency, and safety. Whether you prefer the glass-like consistency of shatter, the creamy texture of budder, or the terpene-rich profile of live resin, we have premium options to suit every preference.
+                    </p>
+                    
+                    <p className="text-muted-foreground">
+                      Cannabis concentrates can be consumed in various ways, including dabbing, vaporizing, or adding to flower. They're popular among medical patients for their precise dosing capabilities and among recreational users for their potent effects and rich flavors.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-muted-foreground">
+                      Whether you're looking for medicinal cannabis, relaxation, or stimulation, we offer premium cannabis flowers that guarantee satisfaction. Our team of experts is here to help you navigate our extensive strains list to find the perfect match.
+                    </p>
+                    
+                    <p className="text-muted-foreground">
+                      <a href="#" className="text-primary hover:underline">Buy weed online</a>{" "}
+                      in Canada at Bulk Buddy, your top destination for quality cannabis products. Find the best cannabis store in Canada with our unparalleled selection and expert guidance.
+                    </p>
+                    
+                    <h3 className="text-xl font-bold text-foreground mt-6">What Is Cannabis?</h3>
+                    
+                    <p className="text-muted-foreground">
+                      Cannabis, also known as weed or marijuana, is a plant famous for its psychoactive and medicinal properties. The main chemical compounds in cannabis are cannabinoids, particularly THC (Tetrahydrocannabinol) and CBD (Cannabidiol).{" "}
+                      <a href="#" className="text-primary hover:underline">THC</a>{" "}
+                      is known for producing a "high" due to its psychoactive effects, while{" "}
+                      <a href="#" className="text-primary hover:underline">CBD</a>{" "}
+                      is renowned for its therapeutic benefits without causing a high.
+                    </p>
+                    
+                    <p className="text-muted-foreground">
+                      Historically, people have used marijuana for both medical and recreational purposes. It is also an integral part of many religious and cultural rituals. Today, cannabis is the subject of extensive research due to its potential to support and alleviate various medical conditions.
+                    </p>
+                    
+                    <p className="text-muted-foreground">
+                      Many individuals use cannabis for its relaxing and euphoric effects. It is commonly used to manage pain, reduce inflammation, and relieve nausea. Cannabis is frequently sought as a treatment for conditions such as anxiety, depression, glaucoma, and muscle spasms from multiple sclerosis. Additionally, it is effective in alleviating symptoms for chemotherapy patients, such as stimulating appetite and managing sleep disorders.
+                    </p>
+                    
+                    <p className="text-muted-foreground">
+                      One of the most common uses of cannabis is for chronic pain relief. It is considered a safer alternative to opioids and has proven very effective when other pain medications have failed.
+                    </p>
+                    
+                    <p className="text-muted-foreground">
+                      In summary, cannabis offers a range of benefits for both medical and recreational users. Its popularity continues to grow as more people discover its potential for improving quality of life.
+                    </p>
+                  </>
+                )}
               </div>
             </div>
           </div>
