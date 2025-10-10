@@ -454,16 +454,250 @@ const concentratesProducts = [
   }
 ];
 
+const ediblesProducts = [
+  {
+    id: 1,
+    name: "Almond Crunch Bar Chocolate | 500mg CBD | Keo Edibles",
+    category: "Chocolate",
+    priceRange: "$22.00",
+    rating: 5,
+    reviews: 87,
+    image: "https://images.unsplash.com/photo-1511381939415-e44015466834?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 2,
+    name: "Cookies 'N' Crème Chocolate | 500mg CBD | Keo Edibles",
+    category: "Chocolate",
+    priceRange: "$22.00",
+    rating: 5,
+    reviews: 92,
+    image: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 3,
+    name: "Fruity Pebbles White Chocolate | 500mg CBD | Keo Edibles",
+    category: "Chocolate",
+    priceRange: "$22.00",
+    rating: 5,
+    reviews: 78,
+    image: "https://images.unsplash.com/photo-1511381939415-e44015466834?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 4,
+    name: "THC-Infused Beef Jerky – Bold Flavor Meets Relaxation",
+    category: "Jerky",
+    priceRange: "$20.00",
+    rating: 4.5,
+    reviews: 64,
+    image: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 5,
+    name: "Keo Pops Lollipops | 40mg THC | Keo Edibles",
+    category: "Candy",
+    priceRange: "$5.00",
+    rating: 5,
+    reviews: 124,
+    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 6,
+    name: "CBD Oil Tincture | 5000mg | Keo Edibles",
+    category: "Tincture",
+    priceRange: "$120.00",
+    rating: 5,
+    reviews: 156,
+    image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 7,
+    name: "S'mores Cookie Brownies | 400mg THC | Keo Edibles",
+    category: "Brownie",
+    priceRange: "$22.00",
+    rating: 5,
+    reviews: 89,
+    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 8,
+    name: "1:1 Black Cherry ZzZ Bomb Indica | 1:1 40MG | Twisted Extracts",
+    category: "Gummy",
+    priceRange: "$12.00",
+    rating: 5,
+    reviews: 97,
+    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 9,
+    name: "1:1 Blue Raspberry ZzZ Bomb | Indica | 1:1 40MG | Twisted Extracts",
+    category: "Gummy",
+    priceRange: "$12.00",
+    rating: 5,
+    reviews: 117,
+    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 10,
+    name: "1:1 Cara Melts | Indica | 40mg CBD:THC | Twisted Extracts",
+    category: "Caramel",
+    priceRange: "$13.00",
+    rating: 5,
+    reviews: 57,
+    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 11,
+    name: "1:1 Cara Melts | Sativa | 40mg CBD:THC | Twisted Extracts",
+    category: "Caramel",
+    priceRange: "$13.00",
+    rating: 4.5,
+    reviews: 48,
+    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 12,
+    name: "1:1 Halley's Comet Ganja Jah Bomb | Sativa | Twisted Extracts",
+    category: "Gummy",
+    priceRange: "$12.00",
+    rating: 5,
+    reviews: 85,
+    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: 15
+  },
+  {
+    id: 13,
+    name: "1:1 Halley's Comet Watermelon Jah Bomb | Twisted Extracts",
+    category: "Gummy",
+    priceRange: "$12.00",
+    rating: 4.5,
+    reviews: 71,
+    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: 15
+  },
+  {
+    id: 14,
+    name: "1:1 Mango Jah Bomb | Sativa | 1:1 40MG | Twisted Extracts",
+    category: "Gummy",
+    priceRange: "$12.00",
+    rating: 5,
+    reviews: 103,
+    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 15,
+    name: "1:1 Orange Jah Bomb | Sativa | 1:1 40MG | Twisted Extracts",
+    category: "Gummy",
+    priceRange: "$12.00",
+    rating: 4.5,
+    reviews: 94,
+    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 16,
+    name: "Peach & Grape Puzzle Gummies | 240mg | Keo Edibles",
+    category: "Gummy",
+    priceRange: "$15.00 - $12.00",
+    rating: 5,
+    reviews: 96,
+    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 17,
+    name: "Peach Jelly Bomb | 80mg CBD | Twisted Extracts",
+    category: "Gummy",
+    priceRange: "$13.00",
+    rating: 5,
+    reviews: 84,
+    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 18,
+    name: "Pet CBD Oil Tinctures | 250mg CBD | Keo Edibles",
+    category: "Tincture",
+    priceRange: "$45.00 - $40.00",
+    rating: 5,
+    reviews: 29,
+    image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 19,
+    name: "Pet CBD Oil Tinctures | 500mg CBD | Keo Edibles",
+    category: "Tincture",
+    priceRange: "$56.00 - $50.00",
+    rating: 5,
+    reviews: 33,
+    image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  },
+  {
+    id: 20,
+    name: "Twisted Extract Gummies | Mixed Flavors | 80mg THC",
+    category: "Gummy",
+    priceRange: "$12.00",
+    rating: 5,
+    reviews: 142,
+    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
+  }
+];
+
 const ProductCategory = () => {
   const { category } = useParams();
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const navigate = useNavigate();
   
-  const products = category === 'concentrates' ? concentratesProducts : cannabisProducts;
-  const categoryTitle = category === 'concentrates' ? 'Cannabis Concentrates' : 'Cannabis Flower';
-  const categoryDescription = category === 'concentrates' 
-    ? "Explore our top-tier range of cannabis concentrates in Canada, perfect for users seeking high potency and fast-acting effects. Bulk Buddy brings you expertly crafted shatter, budder, hash, and more—all lab-tested and ready to elevate your experience."
-    : "Discover the largest selection of cannabis strains in Canada at Bulk Buddy. Our extensive range includes Indica, Sativa, & Hybrid strains, ensuring you find the perfect match for your needs.";
+  const products = 
+    category === 'concentrates' ? concentratesProducts :
+    category === 'edibles' ? ediblesProducts :
+    cannabisProducts;
+    
+  const categoryTitle = 
+    category === 'concentrates' ? 'Cannabis Concentrates' :
+    category === 'edibles' ? 'Cannabis Edibles' :
+    'Cannabis Flower';
+    
+  const categoryDescription = 
+    category === 'concentrates' 
+      ? "Explore our top-tier range of cannabis concentrates in Canada, perfect for users seeking high potency and fast-acting effects. Bulk Buddy brings you expertly crafted shatter, budder, hash, and more—all lab-tested and ready to elevate your experience."
+    : category === 'edibles'
+      ? "Enjoy a delicious twist on cannabis with our wide selection of cannabis edibles in Canada. From THC gummies to chocolates and baked treats, Bulk Buddy has everything you need to medicate discreetly and effectively."
+      : "Discover the largest selection of cannabis strains in Canada at Bulk Buddy. Our extensive range includes Indica, Sativa, & Hybrid strains, ensuring you find the perfect match for your needs.";
 
   const handleProductClick = (product: any) => {
     const productName = product.name;
@@ -631,6 +865,13 @@ const ProductCategory = () => {
                             product.category === 'Kief' ? 'bg-lime-600' :
                             product.category === 'THCa Diamond' ? 'bg-cyan-600' :
                             product.category === 'Distillate' ? 'bg-rose-600' :
+                            product.category === 'Chocolate' ? 'bg-amber-800' :
+                            product.category === 'Gummy' ? 'bg-pink-500' :
+                            product.category === 'Candy' ? 'bg-fuchsia-500' :
+                            product.category === 'Tincture' ? 'bg-teal-600' :
+                            product.category === 'Brownie' ? 'bg-brown-600' :
+                            product.category === 'Jerky' ? 'bg-red-700' :
+                            product.category === 'Caramel' ? 'bg-yellow-700' :
                             'bg-gray-500'
                           }`}>
                             {product.category}
@@ -730,6 +971,35 @@ const ProductCategory = () => {
                     
                     <p className="text-muted-foreground">
                       Cannabis concentrates can be consumed in various ways, including dabbing, vaporizing, or adding to flower. They're popular among medical patients for their precise dosing capabilities and among recreational users for their potent effects and rich flavors.
+                    </p>
+                  </>
+                ) : category === 'edibles' ? (
+                  <>
+                    <p className="text-muted-foreground">
+                      <a href="#" className="text-primary hover:underline">Edible marijuana</a>{" "}
+                      gummy candies offer a sweet & easy choice for{" "}
+                      <a href="#" className="text-primary hover:underline">mail order marijuana</a>{" "}
+                      users. Dosing is simplified when using weed gummies, no matter which shape or form they come in. From{" "}
+                      <a href="#" className="text-primary hover:underline">Keo Edibles</a>{" "}
+                      in the shape of a missing puzzle piece to your pain to basic medicated gummies in the shape of worms, you'll find our assortment varied enough for you to find your favourite. Some of our weed gummies are THC dominant for a tasty and long-lasting high. Then we have{" "}
+                      <a href="#" className="text-primary hover:underline">CBD</a>{" "}
+                      edibles for medicinal purposes.
+                    </p>
+                    
+                    <p className="text-muted-foreground">
+                      If you're looking to buy edibles online In Canada, then your search for THC gummies is over. Our premium choices of cannabis-infused edible. You can buy Edibles online from us in a wide selection of different forms, include THC Gummies, Weed Cookies, THC Chocolate Bars as well as THC Tinctures. We are the best place to buy edibles because our products are created with the best quality flowers and concentrates.
+                    </p>
+                    
+                    <p className="text-muted-foreground">
+                      Edible cannabis products provide a smoke-free alternative to consuming dried marijuana, but there are many factors that should be considered when seeking to determine your preferred consumption amount, potency & potential effects.
+                    </p>
+                    
+                    <p className="text-muted-foreground">
+                      The way you consume cannabis will alter the onset, duration and intensity of effects, so if you are trying edibles for the first time, start low and go slow.
+                    </p>
+                    
+                    <p className="text-muted-foreground">
+                      Unlike smoking dried marijuana, which can produce effects within minutes, the effects from consuming cannabis-infused products can be delayed from 30 minutes to four hours or more. This delay occurs because the tetrahydrocannabinol, or THC, and other active ingredients in the edible cannabis product enter the body through the digestive tract, where they are absorbed into the bloodstream and then processed by the liver.
                     </p>
                   </>
                 ) : (
