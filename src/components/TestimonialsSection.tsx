@@ -55,7 +55,7 @@ const TestimonialsSection = () => {
               Rewards & Promos
             </h3>
             <p className="text-muted-foreground mb-6">
-              Bulk Buddy offers many different ways for you to save.
+              Chronic Guru offers many different ways for you to save.
             </p>
             
             {/* BB Points */}

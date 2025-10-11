@@ -29,7 +29,7 @@ const Footer = () => {
                 <Mail className="h-5 w-5 text-muted-foreground mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-muted-foreground mb-1">Need help with your order?</p>
-                  <p className="text-sm font-medium text-card-foreground">info@bulkbuddy.co</p>
+                  <p className="text-sm font-medium text-card-foreground">info@chronicguru.co</p>
                 </div>
               </div>
             </div>
@@ -219,7 +219,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              Copyright 2024 © Bulk Buddy. All Rights Reserved.
+              Copyright 2024 © Chronic Guru. All Rights Reserved.
             </p>
             <div className="flex items-center gap-2">
               <div className="bg-primary/10 px-3 py-1 rounded text-xs font-medium">E-transfer</div>

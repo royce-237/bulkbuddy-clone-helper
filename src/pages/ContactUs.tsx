@@ -41,7 +41,7 @@ const ContactUs = () => {
       {/* Hero Section */}
       <div className="bg-primary py-24">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-primary-foreground/90 text-sm font-medium mb-2 uppercase tracking-wider">Bulk Buddy</p>
+          <p className="text-primary-foreground/90 text-sm font-medium mb-2 uppercase tracking-wider">Chronic Guru</p>
           <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground mb-4">Contact Us</h1>
           <p className="text-primary-foreground/90 text-lg max-w-3xl mx-auto">
             Have a Question? Product Inquires? Or just want to simple chat? Then feel free to contact us from either methods below and our staff will be happy to help!
@@ -70,13 +70,13 @@ const ContactUs = () => {
                 <MapPin className="h-5 w-5 text-primary mt-1" />
                 <div>
                   <p className="text-sm text-muted-foreground">Canada</p>
-                  <p className="font-semibold text-foreground">Bulk Buddy</p>
+                  <p className="font-semibold text-foreground">Chronic Guru</p>
                 </div>
               </div>
               
               <div>
-                <a href="mailto:info@bulkbuddy.co" className="text-primary hover:underline">
-                  info@bulkbuddy.co
+                <a href="mailto:info@chronicguru.co" className="text-primary hover:underline">
+                  info@chronicguru.co
                 </a>
               </div>
 

@@ -17,7 +17,7 @@ const PointsRewards = () => {
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         <div className="container mx-auto px-4 text-center relative z-10">
-          <p className="text-white/90 text-sm font-medium mb-2 uppercase tracking-wider">Bulk Buddy</p>
+          <p className="text-white/90 text-sm font-medium mb-2 uppercase tracking-wider">Chronic Guru</p>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">POINTS & PROMOTIONS</h1>
           <p className="text-white/90 text-lg max-w-3xl mx-auto">
             If you're looking for extra savings, this is the right place! Up to 40% OFF + Earn Points for Reviews & Referrals.
@@ -51,7 +51,7 @@ const PointsRewards = () => {
             <div className="flex-1">
               <div className="flex items-start justify-between mb-6">
                 <h3 className="text-3xl font-bold">BB Points</h3>
-                <p className="text-sm text-muted-foreground">Shop at BulkBuddy to collect points for those rainy days.</p>
+                <p className="text-sm text-muted-foreground">Shop at Chronic Guru to collect points for those rainy days.</p>
               </div>
               <div className="space-y-3">
                 <p className="text-foreground">
@@ -72,7 +72,7 @@ const PointsRewards = () => {
             <div className="flex-1">
               <h3 className="text-3xl font-bold mb-6">Refer A Friend Program</h3>
               <p className="text-foreground">
-                We firmly believe all your friends & family will benefit from shopping at Bulk Buddy. That's why we're offering $15 for each referral that completes an order.{" "}
+                We firmly believe all your friends & family will benefit from shopping at Chronic Guru. That's why we're offering $15 for each referral that completes an order.{" "}
                 <a href="#" className="text-primary hover:underline">Simply click here to find out more.</a>
               </p>
             </div>

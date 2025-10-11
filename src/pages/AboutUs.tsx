@@ -18,10 +18,10 @@ const AboutUs = () => {
           </div>
           <div className="relative z-10 text-center text-white px-4">
             <p className="text-sm uppercase tracking-wider mb-2">ALL ABOUT</p>
-            <h1 className="text-5xl md:text-6xl font-bold">BULK BUDDY</h1>
+            <h1 className="text-5xl md:text-6xl font-bold">CHRONIC GURU</h1>
             <p className="mt-4 text-lg max-w-3xl mx-auto">
               If you're looking for a reliable and trustworthy wholesale weed supplier in Canada,
-              look no further than Bulk Buddy Online Dispensary. We offers top-quality cannabis
+              look no further than Chronic Guru Online Dispensary. We offers top-quality cannabis
               products at wholesale prices, making us the perfect choice for dispensaries and
               other retailers.
             </p>
@@ -76,9 +76,9 @@ const AboutUs = () => {
               <div className="flex gap-6">
                 <div className="text-4xl font-bold text-primary">02.</div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-4">Why Should You Order With Bulk Buddy?</h3>
+                  <h3 className="text-2xl font-bold mb-4">Why Should You Order With Chronic Guru?</h3>
                   <p className="text-muted-foreground">
-                    We firmly believe customers will appreciate the level of service they can expect from Bulk Buddy staff. We hand select the best quality products after testing them, and work directly with other manufacturers to ensure our customers are satisfied. We pride ourselves in giving our complete attention to each customer. That is what separates us from the competitors.
+                    We firmly believe customers will appreciate the level of service they can expect from Chronic Guru staff. We hand select the best quality products after testing them, and work directly with other manufacturers to ensure our customers are satisfied. We pride ourselves in giving our complete attention to each customer. That is what separates us from the competitors.
                   </p>
                 </div>
               </div>

@@ -694,10 +694,10 @@ const ProductCategory = () => {
     
   const categoryDescription = 
     category === 'concentrates' 
-      ? "Explore our top-tier range of cannabis concentrates in Canada, perfect for users seeking high potency and fast-acting effects. Bulk Buddy brings you expertly crafted shatter, budder, hash, and more—all lab-tested and ready to elevate your experience."
+      ? "Explore our top-tier range of cannabis concentrates in Canada, perfect for users seeking high potency and fast-acting effects. Chronic Guru brings you expertly crafted shatter, budder, hash, and more—all lab-tested and ready to elevate your experience."
     : category === 'edibles'
-      ? "Enjoy a delicious twist on cannabis with our wide selection of cannabis edibles in Canada. From THC gummies to chocolates and baked treats, Bulk Buddy has everything you need to medicate discreetly and effectively."
-      : "Discover the largest selection of cannabis strains in Canada at Bulk Buddy. Our extensive range includes Indica, Sativa, & Hybrid strains, ensuring you find the perfect match for your needs.";
+      ? "Enjoy a delicious twist on cannabis with our wide selection of cannabis edibles in Canada. From THC gummies to chocolates and baked treats, Chronic Guru has everything you need to medicate discreetly and effectively."
+      : "Discover the largest selection of cannabis strains in Canada at Chronic Guru. Our extensive range includes Indica, Sativa, & Hybrid strains, ensuring you find the perfect match for your needs.";
 
   const handleProductClick = (product: any) => {
     const productName = product.name;
@@ -966,7 +966,7 @@ const ProductCategory = () => {
                     </p>
                     
                     <p className="text-muted-foreground">
-                      At Bulk Buddy, all our concentrates are lab-tested to ensure purity, potency, and safety. Whether you prefer the glass-like consistency of shatter, the creamy texture of budder, or the terpene-rich profile of live resin, we have premium options to suit every preference.
+                      At Chronic Guru, all our concentrates are lab-tested to ensure purity, potency, and safety. Whether you prefer the glass-like consistency of shatter, the creamy texture of budder, or the terpene-rich profile of live resin, we have premium options to suit every preference.
                     </p>
                     
                     <p className="text-muted-foreground">
@@ -1010,7 +1010,7 @@ const ProductCategory = () => {
                     
                     <p className="text-muted-foreground">
                       <a href="#" className="text-primary hover:underline">Buy weed online</a>{" "}
-                      in Canada at Bulk Buddy, your top destination for quality cannabis products. Find the best cannabis store in Canada with our unparalleled selection and expert guidance.
+                      in Canada at Chronic Guru, your top destination for quality cannabis products. Find the best cannabis store in Canada with our unparalleled selection and expert guidance.
                     </p>
                     
                     <h3 className="text-xl font-bold text-foreground mt-6">What Is Cannabis?</h3>

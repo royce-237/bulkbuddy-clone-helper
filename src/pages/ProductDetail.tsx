@@ -278,7 +278,7 @@ const ProductDetail = () => {
               <TabsContent value="description" className="mt-6">
                 <div className="prose prose-sm max-w-none">
                   <h2 className="text-2xl font-bold text-foreground mb-4">
-                    Buy {product.name} Exclusively At Bulk Buddy's Curated Online Dispensary Canada.
+                    Buy {product.name} Exclusively At Chronic Guru's Curated Online Dispensary Canada.
                   </h2>
                   <p className="text-muted-foreground">{product.description}</p>
                 </div>
