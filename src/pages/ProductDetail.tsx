@@ -56,6 +56,29 @@ const productData: Record<string, any> = {
     thc: "80-85%",
     cbd: "<1%",
     batch: "Sept 27, 2025"
+  },
+  "cookies-n-crme-chocolate-500mg-cbd-keo-edibles": {
+    id: 3,
+    name: "Cookies n' Crème Chocolate 500mg CBD - KEO Edibles",
+    price: 35.00,
+    priceRange: "$35.00",
+    rating: 5,
+    reviews: 8,
+    image: "https://images.unsplash.com/photo-1607473681481-72abb1152aa6?w=600&h=600&fit=crop&crop=center",
+    images: [
+      "https://images.unsplash.com/photo-1607473681481-72abb1152aa6?w=600&h=600&fit=crop&crop=center",
+    ],
+    categories: ["All Products", "Edibles", "Chocolate"],
+    sku: "KEO-COK-500",
+    description: "Delicious cookies and cream chocolate bar infused with 500mg of premium CBD. Perfect for relaxation and wellness.",
+    budSize: "500mg CBD",
+    ratings: "(Premium)",
+    texture: "Smooth & Creamy",
+    flavour: "Cookies & Cream",
+    medicalUsage: "Relaxation / Wellness / Sleep",
+    thc: "<1%",
+    cbd: "500mg",
+    batch: "Oct 10, 2025"
   }
 };
 
