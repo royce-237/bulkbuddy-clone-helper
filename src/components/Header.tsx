@@ -110,10 +110,31 @@ const Header = () => {
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
-              
-              <Button variant="ghost" size="sm" className="whitespace-nowrap" asChild>
-                <a href="/about-us">About Us</a>
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="sm" className="whitespace-nowrap gap-2">
+                    About Us
+                    <ChevronDown className="h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="w-56 bg-background z-50">
+                  <DropdownMenuItem className="cursor-pointer" asChild>
+                    <a href="/about-us" className="w-full">
+                      Our Story
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer" asChild>
+                    <a href="/our-history" className="w-full">
+                      Our History
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer" asChild>
+                    <a href="/reviews" className="w-full">
+                      Reviews
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Button variant="ghost" size="sm" className="whitespace-nowrap" asChild>
                 <a href="/faq">FAQ</a>
               </Button>
