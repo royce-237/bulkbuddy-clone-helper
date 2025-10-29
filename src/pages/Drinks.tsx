@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-const products = [
+export const products = [
   {
     id: 1,
     name: "Iced Tea",
@@ -62,7 +62,7 @@ const Drinks = () => {
 
   const handleProductClick = (product: any) => {
     const slug = product.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-    navigate(`/product/${slug}`, { state: { product } });
+    navigate(`/product/${slug}`, { state: { product: { ...product, menuCategory: "Drinks" } } });
   };
 
   return (

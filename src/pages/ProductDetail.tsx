@@ -6,81 +6,16 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Star, Minus, Plus, ShoppingCart, Heart } from "lucide-react";
 import { useState } from "react";
+import { useCart } from "../context/CartContext";
 
-// Product data (in real app, this would come from an API or database)
-const productData: Record<string, any> = {
-  "thc-dual-chamber-disposable-vape-pens-6ml": {
-    id: 1,
-    name: "THC Dual Chamber Disposable Vape Pens | 6ML",
-    price: 70.00,
-    priceRange: "$70.00",
-    rating: 5,
-    reviews: 1,
-    image: "https://images.unsplash.com/photo-1595475038665-8cd6d43c9bf4?w=600&h=600&fit=crop&crop=center",
-    images: [
-      "https://images.unsplash.com/photo-1595475038665-8cd6d43c9bf4?w=600&h=600&fit=crop&crop=center",
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=600&fit=crop&crop=center",
-    ],
-    categories: ["All Products", "Cannabis", "Vapes"],
-    sku: "N/A",
-    description: "Premium THC dual chamber disposable vape pen with 6ML capacity. Features smooth vapor production and high potency distillate.",
-    budSize: "6ML",
-    ratings: "(AAA+)",
-    texture: "Smooth & Flavorful",
-    flavour: "Various Strains Available",
-    medicalUsage: "Anxiety / Pain / Stress Relief",
-    thc: "85-90%",
-    cbd: "<1%",
-    batch: "Sept 27, 2025"
-  },
-  "premium-distillate-thc-disposable-vape-pens-1ml": {
-    id: 2,
-    name: "Premium Distillate THC Disposable Vape Pens | 1ML",
-    price: 30.00,
-    originalPrice: 35.00,
-    priceRange: "$30.00",
-    rating: 5,
-    reviews: 12,
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=600&fit=crop&crop=center",
-    images: [
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=600&fit=crop&crop=center",
-    ],
-    categories: ["All Products", "Cannabis", "Vapes"],
-    sku: "N/A",
-    description: "High-quality distillate THC disposable vape pen with 1ML capacity.",
-    budSize: "1ML",
-    ratings: "(AAA+)",
-    texture: "Smooth & Perfect Cure",
-    flavour: "Berry / Candy / Fruity",
-    medicalUsage: "Pain / Anxiety / Sleep",
-    thc: "80-85%",
-    cbd: "<1%",
-    batch: "Sept 27, 2025"
-  },
-  "cookies-n-crme-chocolate-500mg-cbd-keo-edibles": {
-    id: 3,
-    name: "Cookies n' Crème Chocolate 500mg CBD - KEO Edibles",
-    price: 35.00,
-    priceRange: "$35.00",
-    rating: 5,
-    reviews: 8,
-    image: "https://images.unsplash.com/photo-1607473681481-72abb1152aa6?w=600&h=600&fit=crop&crop=center",
-    images: [
-      "https://images.unsplash.com/photo-1607473681481-72abb1152aa6?w=600&h=600&fit=crop&crop=center",
-    ],
-    categories: ["All Products", "Edibles", "Chocolate"],
-    sku: "KEO-COK-500",
-    description: "Delicious cookies and cream chocolate bar infused with 500mg of premium CBD. Perfect for relaxation and wellness.",
-    budSize: "500mg CBD",
-    ratings: "(Premium)",
-    texture: "Smooth & Creamy",
-    flavour: "Cookies & Cream",
-    medicalUsage: "Relaxation / Wellness / Sleep",
-    thc: "<1%",
-    cbd: "500mg",
-    batch: "Oct 10, 2025"
-  }
-};
+import { cannabisProducts, concentratesProducts, ediblesProducts } from "./ProductCategory";
+import { products as cartridgesProducts } from "./Cartridges";
+import { gummiesProducts } from "./Gummies";
+import { products as preRollsProducts } from "./PreRolls";
+import { products as drinksProducts } from "./Drinks";
+import { products as merchProducts } from "./Merch";
+
+const allProducts = [...cannabisProducts, ...concentratesProducts, ...ediblesProducts, ...cartridgesProducts, ...gummiesProducts, ...preRollsProducts, ...drinksProducts, ...merchProducts];
 
 const weights = ["3.5 Grams", "7 Grams", "1/2 Ounce", "1 Ounce", "Quarter Pound", "Half Pound", "Pound"];
 
@@ -90,18 +25,72 @@ const ProductDetail = () => {
   const location = useLocation();
   const [quantity, setQuantity] = useState(1);
   const [selectedWeight, setSelectedWeight] = useState("3.5 Grams");
+  const { addToCart } = useCart();
+
+  const stateProduct = (location.state as any)?.product;
+  const product = stateProduct ?? allProducts.find(p => {
+    if (!p.name) return false;
+    const pSlug = p.name
+      .toLowerCase()
+      .replace(/[|]/g, '')
+      .replace(/[^\w\s-]+/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim();
+    return pSlug === slug;
+  });
+  
+  const productImages = product?.images?.length ? product.images : (product?.image ? [product.image] : []);
   const [selectedImage, setSelectedImage] = useState(0);
 
-  // Prefer product passed via navigation state, fallback to local dataset
-  const stateProduct = (location.state as any)?.product;
-  const product = stateProduct ?? (slug ? productData[slug] : Object.values(productData)[0]);
+  const { menuCategory } = (location.state as any)?.product || {};
+  let relatedProductsSource = allProducts;
+
+  if (menuCategory) {
+    switch (menuCategory) {
+      case "Gummies":
+        relatedProductsSource = gummiesProducts;
+        break;
+      case "Cartridges":
+        relatedProductsSource = cartridgesProducts;
+        break;
+      case "Pre-Rolls":
+        relatedProductsSource = preRollsProducts;
+        break;
+      case "Drinks":
+        relatedProductsSource = drinksProducts;
+        break;
+      case "Merch":
+        relatedProductsSource = merchProducts;
+        break;
+      case "cannabis":
+        relatedProductsSource = cannabisProducts;
+        break;
+      case "edibles":
+        relatedProductsSource = ediblesProducts;
+        break;
+      case "concentrates":
+        relatedProductsSource = concentratesProducts;
+        break;
+      default:
+        relatedProductsSource = allProducts;
+    }
+  }
 
   if (!product) {
     return <div>Product not found</div>;
   }
 
-  const priceDisplay = product.priceRange || (typeof product.price === 'number' ? `$${product.price.toFixed(2)}` : '');
-  const unitPrice = typeof product.price === 'number' ? product.price : 0;
+  const priceValue = (() => {
+    const priceString = product.price || product.priceRange;
+    if (typeof priceString === 'string') {
+      return parseFloat(priceString.replace(/[^0-9.]+/g, '')) || 0;
+    }
+    return typeof product.price === 'number' ? product.price : 0;
+  })();
+
+  const priceDisplay = product.priceRange || `$${priceValue.toFixed(2)}`;
+  const unitPrice = priceValue;
 
   const decrementQuantity = () => {
     if (quantity > 1) setQuantity(quantity - 1);
@@ -109,6 +98,18 @@ const ProductDetail = () => {
 
   const incrementQuantity = () => {
     setQuantity(quantity + 1);
+  };
+
+  const handleAddToCart = () => {
+    if (product) {
+      const itemId = product.id || Date.now() + Math.random(); // Générer un ID unique si manquant
+      addToCart({
+        id: itemId,
+        name: product.name,
+        price: unitPrice,
+        image: productImages[0] || '',
+      });
+    }
   };
 
   return (
@@ -139,16 +140,16 @@ const ProductDetail = () => {
               {/* Main Image */}
               <div className="relative bg-card rounded-lg overflow-hidden border">
                 <img
-                  src={product.images?.[selectedImage] || product.image}
+                  src={productImages[selectedImage] || ''}
                   alt={product.name}
                   className="w-full h-auto object-cover"
                 />
               </div>
               
               {/* Thumbnail Images */}
-              {product.images && product.images.length > 1 && (
+              {productImages.length > 1 && (
                 <div className="flex gap-2">
-                  {product.images.map((img: string, idx: number) => (
+                  {productImages.map((img: string, idx: number) => (
                     <button
                       key={idx}
                       onClick={() => setSelectedImage(idx)}
@@ -255,7 +256,7 @@ const ProductDetail = () => {
                   </Button>
                 </div>
 
-                <Button className="flex-1 bg-green-600 hover:bg-green-700 text-white h-12">
+                <Button className="flex-1 bg-green-600 hover:bg-green-700 text-white h-12" onClick={handleAddToCart}>
                   <ShoppingCart className="h-5 w-5 mr-2" />
                   Add to cart
                 </Button>
@@ -272,64 +273,66 @@ const ProductDetail = () => {
             <div className="mt-16 border">
                 <h2 className="text-2xl text-center font-bold text-foreground mb-6 underline">Related products</h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                    {Object.values(productData).filter(p => p.id !== product.id).slice(0, 6).map((relatedProduct: any) => (
-                        <div key={relatedProduct.id} className="group relative bg-card border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                            <button className="absolute top-2 right-2 z-10 bg-white rounded-full p-1.5 hover:bg-gray-100 transition-colors">
-                                <Heart className="h-4 w-4 text-gray-600" />
-                            </button>
+                    {relatedProductsSource
+                        .filter(p => p.id !== product.id && (relatedProductsSource !== allProducts || p.category === product.category))
+                        .slice(0, 6)
+                        .map((relatedProduct: any) => (
+                            <div key={relatedProduct.id} className="group relative bg-card border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                                <button className="absolute top-2 right-2 z-10 bg-white rounded-full p-1.5 hover:bg-gray-100 transition-colors">
+                                    <Heart className="h-4 w-4 text-gray-600" />
+                                </button>
 
-                            <div className="aspect-square overflow-hidden bg-gray-100">
-                                <img
-                                    src={relatedProduct.image}
-                                    alt={relatedProduct.name}
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                />
-                            </div>
+                                <div className="aspect-square overflow-hidden bg-gray-100">
+                                    <img
+                                        src={relatedProduct.image}
+                                        alt={relatedProduct.name}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    />
+                                </div>
 
-                            <div className="p-3">
-                                <h3 className="text-xs font-medium text-foreground mb-1 line-clamp-2 min-h-[2rem]">
-                                    {relatedProduct.name}
-                                </h3>
+                                <div className="p-3">
+                                    <h3 className="text-xs font-medium text-foreground mb-1 line-clamp-2 min-h-[2rem]">
+                                        {relatedProduct.name}
+                                    </h3>
 
-                                <div className="flex items-center gap-1 mb-2">
-                                    <div className="flex">
-                                        {[...Array(5)].map((_, i) => (
-                                            <Star
-                                                key={i}
-                                                className={`w-3 h-3 ${
-                                                    i < relatedProduct.rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
-                                                }`}
-                                            />
-                                        ))}
+                                    <div className="flex items-center gap-1 mb-2">
+                                        <div className="flex">
+                                            {[...Array(5)].map((_, i) => (
+                                                <Star
+                                                    key={i}
+                                                    className={`w-3 h-3 ${
+                                                        i < relatedProduct.rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
+                                                    }`}
+                                                />
+                                            ))}
+                                        </div>
+                                        <span className="text-xs text-muted-foreground">{relatedProduct.reviews}</span>
                                     </div>
-                                    <span className="text-xs text-muted-foreground">{relatedProduct.reviews}</span>
-                                </div>
 
-                                <div className="text-sm font-bold text-foreground mb-2">
-                                    {relatedProduct.priceRange || `$${relatedProduct.price.toFixed(2)}`}
+                                                                    <div className="text-sm font-bold text-foreground mb-2">
+                                                                        {relatedProduct.priceRange || (typeof relatedProduct.price === 'number' ? `$${relatedProduct.price.toFixed(2)}` : relatedProduct.price)} 
+                                                                    </div>
+                                    <Button
+                                        size="sm"
+                                        className="w-full bg-green-600 hover:bg-green-700 text-white text-xs h-8"
+                                        onClick={() => {
+                                            const slug = relatedProduct.name
+                                                .toLowerCase()
+                                                .replace(/[|]/g, '')
+                                                .replace(/[^\w\s-]+/g, '')
+                                                .replace(/\s+/g, '-')
+                                                .replace(/-+/g, '-')
+                                                .trim();
+                                            navigate(`/product/${slug}`, { state: { product: relatedProduct, menuCategory: menuCategory } });
+                                            window.scrollTo(0, 0);
+                                        }}
+                                    >
+                                        <ShoppingCart className="h-3 w-3 mr-1" />
+                                        IN STOCK
+                                    </Button>
                                 </div>
-
-                                <Button
-                                    size="sm"
-                                    className="w-full bg-green-600 hover:bg-green-700 text-white text-xs h-8"
-                                    onClick={() => {
-                                        const slug = relatedProduct.name
-                                            .toLowerCase()
-                                            .replace(/[|]/g, '')
-                                            .replace(/[^\w\s-]+/g, '')
-                                            .replace(/\s+/g, '-')
-                                            .replace(/-+/g, '-')
-                                            .trim();
-                                        navigate(`/product/${slug}`, { state: { product: relatedProduct } });
-                                        window.scrollTo(0, 0);
-                                    }}
-                                >
-                                    <ShoppingCart className="h-3 w-3 mr-1" />
-                                    IN STOCK
-                                </Button>
                             </div>
-                        </div>
-                    ))}
+                        ))}
                 </div>
             </div>
 
@@ -457,14 +460,13 @@ const ProductDetail = () => {
               
               <TabsContent value="refer" className="mt-6">
                 <div className="bg-green-50 border border-green-200 rounded p-4 text-green-700">
-                  Please <span className="font-medium">register</span> to get your referral link.
+                    <p>Please <span className="font-medium">register</span> to get your referral link.</p>
                 </div>
               </TabsContent>
             </Tabs>
           </div>
         </div>
       </main>
-      
       <Footer />
     </div>
   );

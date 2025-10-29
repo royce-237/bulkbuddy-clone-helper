@@ -17,17 +17,22 @@ import Cartridges from "./pages/Cartridges";
 import PreRolls from "./pages/PreRolls";
 import Concentrates from "./pages/Concentrates";
 import Drinks from "./pages/Drinks";
+import Merch from "./pages/Merch";
+import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
+
+import { CartProvider } from "./context/CartContext";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <HashRouter>
-        <Routes>
+    <CartProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <HashRouter>
+          <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/product-category/:category" element={<ProductCategory />} />
           <Route path="/product/:slug" element={<ProductDetail />} />
@@ -42,11 +47,14 @@ const App = () => (
           <Route path="/pre-rolls" element={<PreRolls />} />
           <Route path="/product-category/concentrates" element={<Concentrates />} />
           <Route path="/drinks" element={<Drinks />} />
+          <Route path="/merch" element={<Merch />} />
+          <Route path="/cart" element={<Cart />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </HashRouter>
     </TooltipProvider>
+   </CartProvider>
   </QueryClientProvider>
 );
 

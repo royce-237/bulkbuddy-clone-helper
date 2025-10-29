@@ -15,10 +15,7 @@ const Header = () => {
     <>
       {/* Promotional Banner */}
       <div className="bg-accent text-accent-foreground py-2 px-4 text-center text-sm">
-        <p>
-          Free Express Shipping on orders $150+ • Online Chat Support Mon-Fri: 9am-10pm PST •{" "}
-          <span className="font-semibold">Use code BULK5 for 5% off first order</span>
-        </p>
+        <p>Free Express Shipping on orders $150+</p>
       </div>
 
       {/* Main Header */}
@@ -28,7 +25,8 @@ const Header = () => {
             {/* Logo */}
             <div className="flex items-center">
               <Link to="/">
-</Link>
+                <img src={logo} alt="Chronic Guru" className="h-10" />
+              </Link>
             </div>
 
             {/* Search Bar */}
@@ -48,11 +46,13 @@ const Header = () => {
                 <span className="hidden md:inline">Sign In</span>
               </Button>
               
-              <Button variant="ghost" size="sm" className="relative">
-                <ShoppingCart className="h-4 w-4" />
-                <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  2
-                </span>
+              <Button variant="ghost" size="sm" className="relative" asChild>
+                <Link to="/cart">
+                  <ShoppingCart className="h-4 w-4" />
+                  <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                    2
+                  </span>
+                </Link>
               </Button>
 
               <Button variant="ghost" size="sm" className="md:hidden">
@@ -110,8 +110,10 @@ const Header = () => {
                       Drinks
                     </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem className="cursor-pointer">
-                    Merch
+                  <DropdownMenuItem className="cursor-pointer" asChild>
+                    <Link to="/merch" className="w-full">
+                      Merch
+                    </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem className="cursor-pointer">
                     Shop All Products

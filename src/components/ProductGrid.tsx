@@ -202,7 +202,7 @@ const ediblesProducts = [
 const ProductGrid = () => {
   const navigate = useNavigate();
 
-  const handleProductClick = (product: any) => {
+  const handleProductClick = (product: any, categoryType: string) => {
     const productName = product.name;
     const slug = productName
       .toLowerCase()
@@ -211,7 +211,13 @@ const ProductGrid = () => {
       .replace(/\s+/g, '-') // Replace spaces with dashes
       .replace(/-+/g, '-') // Collapse multiple dashes
       .trim();
-    navigate(`/product/${slug}`, { state: { product } });
+
+    let categories = [categoryType];
+    if (product.badge) {
+      categories.push(product.badge);
+    }
+
+    navigate(`/product/${slug}`, { state: { product: { ...product, categories } } });
   };
 
   const renderProductSection = (
@@ -280,7 +286,7 @@ const ProductGrid = () => {
                     variant="hero"
                     size="sm"
                     className="absolute bottom-2 left-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    onClick={() => handleProductClick(product)}
+                    onClick={() => handleProductClick(product, category)}
                   >
                     <ShoppingCart className="h-4 w-4 mr-2" />
                     Add to Cart
@@ -317,11 +323,6 @@ const ProductGrid = () => {
                     <span className="font-bold text-primary">
                       ${product.price}
                     </span>
-                    {product.originalPrice && (
-                      <span className="text-xs text-muted-foreground line-through">
-                        ${product.originalPrice}
-                      </span>
-                    )}
                   </div>
                 </div>
               </div>

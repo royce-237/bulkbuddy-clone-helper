@@ -5,7 +5,7 @@ import { Star, ChevronDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const gummiesProducts = [
+export const gummiesProducts = [
   {
     id: 1,
     name: "60MG Gummies",
@@ -62,7 +62,7 @@ const Gummies = () => {
 
   const handleProductClick = (product: any) => {
     const slug = product.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-    navigate(`/product/${slug}`, { state: { product } });
+    navigate(`/product/${slug}`, { state: { product: { ...product, menuCategory: "Gummies" } } });
   };
 
   return (

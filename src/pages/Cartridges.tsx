@@ -5,7 +5,7 @@ import { Star } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import ProductCategories from "@/components/ProductCategories.tsx";
 
-const products = [
+export const products = [
   {
     id: 1,
     name: "Chronic Guru 510 Thread Vape Battery",
@@ -14,6 +14,7 @@ const products = [
     reviews: 11,
     image: "/img/cartridges/img.png",
     inStock: true,
+    category: "Cartridges",
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ const products = [
     image: "/img/cartridges/img_1.png",
     inStock: true,
     badges: ["Hybrid Indica Sativa 62%", "High, Medium Potency"],
+    category: "Cartridges",
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ const products = [
     image: "/img/cartridges/img_2.png",
     inStock: true,
     badges: ["High, Medium Potency"],
+    category: "Cartridges",
   }
 ];
 
@@ -42,7 +45,7 @@ const Cartridges = () => {
 
   const handleProductClick = (product: any) => {
     const slug = product.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-    navigate(`/product/${slug}`, { state: { product } });
+    navigate(`/product/${slug}`, { state: { product: { ...product, menuCategory: "Cartridges" } } });
   };
 
   return (

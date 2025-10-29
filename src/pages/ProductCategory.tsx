@@ -8,7 +8,7 @@ import { Heart, Star, Grid, List, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const cannabisProducts = [
+export const cannabisProducts = [
   {
     id: 1,
     name: "Chocolate Kush",
@@ -32,9 +32,7 @@ const cannabisProducts = [
     salePercentage: null
   },
   {
-    id: 3,
-    name: "$39/oz *PROMO* Mixed Strain (POPCORN)",
-    category: null,
+    category: "Cannabis Flower",
     priceRange: "$39.00 - $139.00",
     rating: 4.5,
     reviews: 487,
@@ -43,9 +41,7 @@ const cannabisProducts = [
     salePercentage: 65
   },
   {
-    id: 4,
-    name: "$55/oz *Promo*Mystery AA-AAAA Weed Ounce",
-    category: null,
+    category: "Cannabis Flower",
     priceRange: "$55.00 - $190.00",
     rating: 4.5,
     reviews: 748,
@@ -76,9 +72,7 @@ const cannabisProducts = [
     salePercentage: null
   },
   {
-    id: 7,
-    name: "Premium Shake/Trim (Gelato)",
-    category: null,
+    category: "Cannabis Flower",
     priceRange: "$12.00 - $200.00",
     rating: 5,
     reviews: 180,
@@ -87,9 +81,7 @@ const cannabisProducts = [
     salePercentage: null
   },
   {
-    id: 8,
-    name: "AAA+ Shake/Trim (4 Star General)",
-    category: null,
+    category: "Cannabis Flower",
     priceRange: "$12.00 - $200.00",
     rating: 5,
     reviews: 171,
@@ -98,9 +90,7 @@ const cannabisProducts = [
     salePercentage: null
   },
   {
-    id: 9,
-    name: "Shake/Trim (Pink Kush)",
-    category: null,
+    category: "Cannabis Flower",
     priceRange: "$12.00 - $65.00",
     rating: 4.5,
     reviews: 133,
@@ -109,9 +99,7 @@ const cannabisProducts = [
     salePercentage: null
   },
   {
-    id: 10,
-    name: "Shake/Trim Ace Killer OG Shake Weed",
-    category: null,
+    category: "Cannabis Flower",
     priceRange: "$12.00",
     rating: 4.5,
     reviews: 18,
@@ -120,9 +108,7 @@ const cannabisProducts = [
     salePercentage: null
   },
   {
-    id: 11,
-    name: "AAA+ Shake/Trim Greasy Pink Premium Shake",
-    category: null,
+    category: "Cannabis Flower",
     priceRange: "$12.00 - $200.00",
     rating: 5,
     reviews: 50,
@@ -131,9 +117,7 @@ const cannabisProducts = [
     salePercentage: null
   },
   {
-    id: 12,
-    name: "Shake/Trim Master Kush Premium Shake Weed",
-    category: null,
+    category: "Cannabis Flower",
     priceRange: "$12.00 - $200.00",
     rating: 5,
     reviews: 35,
@@ -231,18 +215,7 @@ const cannabisProducts = [
   }
 ];
 
-const concentratesProducts = [
-  {
-    id: 1,
-    name: "Chocolate Rain Budder",
-    category: "Budder",
-    priceRange: "$42.00 - $73.00",
-    rating: 5,
-    reviews: 35,
-    image: "https://images.unsplash.com/photo-1608839175115-fa1e9c0e9c0d?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
+export const concentratesProducts = [
   {
     id: 2,
     name: "9 Pound Hammer Kief",
@@ -253,6 +226,17 @@ const concentratesProducts = [
     image: "https://images.unsplash.com/photo-1605878863885-094e0c3c9fdb?w=300&h=300&fit=crop",
     inStock: true,
     salePercentage: 18
+  },
+  {
+    id: 1,
+    name: "Chocolate Rain Budder",
+    category: "Budder",
+    priceRange: "$42.00 - $73.00",
+    rating: 5,
+    reviews: 35,
+    image: "https://images.unsplash.com/photo-1608839175115-fa1e9c0e9c0d?w=300&h=300&fit=crop",
+    inStock: true,
+    salePercentage: null
   },
   {
     id: 3,
@@ -454,7 +438,7 @@ const concentratesProducts = [
   }
 ];
 
-const ediblesProducts = [
+export const ediblesProducts = [
   {
     id: 1,
     name: "Almond Crunch Bar Chocolate | 500mg CBD | Keo Edibles",
@@ -681,19 +665,19 @@ const ProductCategory = () => {
   const { category } = useParams();
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const navigate = useNavigate();
-  
-  const products = 
+
+  const products =
     category === 'concentrates' ? concentratesProducts :
     category === 'edibles' ? ediblesProducts :
     cannabisProducts;
-    
-  const categoryTitle = 
+
+  const categoryTitle =
     category === 'concentrates' ? 'Cannabis Concentrates' :
     category === 'edibles' ? 'Cannabis Edibles' :
     'Cannabis Flower';
-    
-  const categoryDescription = 
-    category === 'concentrates' 
+
+  const categoryDescription =
+    category === 'concentrates'
       ? "Explore our top-tier range of cannabis concentrates in Canada, perfect for users seeking high potency and fast-acting effects. Chronic Guru brings you expertly crafted shatter, budder, hash, and more—all lab-tested and ready to elevate your experience."
     : category === 'edibles'
       ? "Enjoy a delicious twist on cannabis with our wide selection of cannabis edibles in Canada. From THC gummies to chocolates and baked treats, Chronic Guru has everything you need to medicate discreetly and effectively."
@@ -708,13 +692,13 @@ const ProductCategory = () => {
       .replace(/\s+/g, '-') // Replace spaces with dashes
       .replace(/-+/g, '-') // Collapse multiple dashes
       .trim();
-    navigate(`/product/${slug}`, { state: { product } });
+    navigate(`/product/${slug}`, { state: { product: { ...product, menuCategory: category } } });
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Notice Banner */}
       <div className="bg-red-600 text-white py-2 px-4 text-center text-sm">
         <strong>Notice:</strong> Notice: Due to an unexpected Canada Post strike, all shipments will now be sent via UPS. Please note that we are unable to deliver to PO Boxes or rural addresses at this time. UPS shipping is a flat rate of $50, with <strong>Free Shipping on orders over $300.</strong> Thank you for your understanding and continued support. If you have any questions or concerns, please don't hesitate to contact us.
@@ -880,7 +864,7 @@ const ProductCategory = () => {
                       )}
 
                       {/* Product Name */}
-                      <h3 
+                      <h3
                         className="font-medium text-card-foreground mb-2 text-sm leading-tight line-clamp-2 cursor-pointer hover:text-primary"
                         onClick={() => handleProductClick(product)}
                       >
@@ -914,7 +898,7 @@ const ProductCategory = () => {
                       </div>
 
                       {/* In Stock Badge */}
-                      <Button 
+                      <Button
                         className="w-full bg-green-600 text-white hover:bg-green-700 text-xs h-8"
                         disabled={!product.inStock}
                         onClick={() => handleProductClick(product)}
@@ -924,7 +908,6 @@ const ProductCategory = () => {
                     </div>
                   </div>
                 ))}
-              </div>
 
               {/* Pagination */}
               <div className="flex justify-center gap-2 mt-8">
@@ -945,30 +928,30 @@ const ProductCategory = () => {
               {/* Description */}
               <div className="mt-12 space-y-6">
                 <h2 className="text-2xl font-bold text-foreground">{categoryTitle}</h2>
-                
+
                 <p className="text-muted-foreground">
                   {categoryDescription}
                 </p>
-                
+
                 {category === 'concentrates' ? (
                   <>
                     <h3 className="text-xl font-bold text-foreground mt-6">What Are Cannabis Concentrates?</h3>
-                    
+
                     <p className="text-muted-foreground">
                       Cannabis concentrates are highly potent extracts derived from the cannabis plant. They contain significantly higher levels of cannabinoids, particularly{" "}
                       <a href="#" className="text-primary hover:underline">THC</a>{" "}
                       and{" "}
                       <a href="#" className="text-primary hover:underline">CBD</a>, compared to traditional flower. Popular concentrate types include shatter, budder, live resin, hash, kief, distillate, and THCa diamonds.
                     </p>
-                    
+
                     <p className="text-muted-foreground">
                       Concentrates are created through various extraction methods that isolate and preserve the most desirable compounds from the cannabis plant. The result is a product that delivers powerful effects with smaller amounts, making them ideal for experienced users and those seeking fast-acting relief.
                     </p>
-                    
+
                     <p className="text-muted-foreground">
                       At Chronic Guru, all our concentrates are lab-tested to ensure purity, potency, and safety. Whether you prefer the glass-like consistency of shatter, the creamy texture of budder, or the terpene-rich profile of live resin, we have premium options to suit every preference.
                     </p>
-                    
+
                     <p className="text-muted-foreground">
                       Cannabis concentrates can be consumed in various ways, including dabbing, vaporizing, or adding to flower. They're popular among medical patients for their precise dosing capabilities and among recreational users for their potent effects and rich flavors.
                     </p>
@@ -985,19 +968,19 @@ const ProductCategory = () => {
                       <a href="#" className="text-primary hover:underline">CBD</a>{" "}
                       edibles for medicinal purposes.
                     </p>
-                    
+
                     <p className="text-muted-foreground">
                       If you're looking to buy edibles online In Canada, then your search for THC gummies is over. Our premium choices of cannabis-infused edible. You can buy Edibles online from us in a wide selection of different forms, include THC Gummies, Weed Cookies, THC Chocolate Bars as well as THC Tinctures. We are the best place to buy edibles because our products are created with the best quality flowers and concentrates.
                     </p>
-                    
+
                     <p className="text-muted-foreground">
                       Edible cannabis products provide a smoke-free alternative to consuming dried marijuana, but there are many factors that should be considered when seeking to determine your preferred consumption amount, potency & potential effects.
                     </p>
-                    
+
                     <p className="text-muted-foreground">
                       The way you consume cannabis will alter the onset, duration and intensity of effects, so if you are trying edibles for the first time, start low and go slow.
                     </p>
-                    
+
                     <p className="text-muted-foreground">
                       Unlike smoking dried marijuana, which can produce effects within minutes, the effects from consuming cannabis-infused products can be delayed from 30 minutes to four hours or more. This delay occurs because the tetrahydrocannabinol, or THC, and other active ingredients in the edible cannabis product enter the body through the digestive tract, where they are absorbed into the bloodstream and then processed by the liver.
                     </p>
@@ -1007,14 +990,14 @@ const ProductCategory = () => {
                     <p className="text-muted-foreground">
                       Whether you're looking for medicinal cannabis, relaxation, or stimulation, we offer premium cannabis flowers that guarantee satisfaction. Our team of experts is here to help you navigate our extensive strains list to find the perfect match.
                     </p>
-                    
+
                     <p className="text-muted-foreground">
                       <a href="#" className="text-primary hover:underline">Buy weed online</a>{" "}
                       in Canada at Chronic Guru, your top destination for quality cannabis products. Find the best cannabis store in Canada with our unparalleled selection and expert guidance.
                     </p>
-                    
+
                     <h3 className="text-xl font-bold text-foreground mt-6">What Is Cannabis?</h3>
-                    
+
                     <p className="text-muted-foreground">
                       Cannabis, also known as weed or marijuana, is a plant famous for its psychoactive and medicinal properties. The main chemical compounds in cannabis are cannabinoids, particularly THC (Tetrahydrocannabinol) and CBD (Cannabidiol).{" "}
                       <a href="#" className="text-primary hover:underline">THC</a>{" "}
@@ -1022,19 +1005,19 @@ const ProductCategory = () => {
                       <a href="#" className="text-primary hover:underline">CBD</a>{" "}
                       is renowned for its therapeutic benefits without causing a high.
                     </p>
-                    
+
                     <p className="text-muted-foreground">
                       Historically, people have used marijuana for both medical and recreational purposes. It is also an integral part of many religious and cultural rituals. Today, cannabis is the subject of extensive research due to its potential to support and alleviate various medical conditions.
                     </p>
-                    
+
                     <p className="text-muted-foreground">
                       Many individuals use cannabis for its relaxing and euphoric effects. It is commonly used to manage pain, reduce inflammation, and relieve nausea. Cannabis is frequently sought as a treatment for conditions such as anxiety, depression, glaucoma, and muscle spasms from multiple sclerosis. Additionally, it is effective in alleviating symptoms for chemotherapy patients, such as stimulating appetite and managing sleep disorders.
                     </p>
-                    
+
                     <p className="text-muted-foreground">
                       One of the most common uses of cannabis is for chronic pain relief. It is considered a safer alternative to opioids and has proven very effective when other pain medications have failed.
                     </p>
-                    
+
                     <p className="text-muted-foreground">
                       In summary, cannabis offers a range of benefits for both medical and recreational users. Its popularity continues to grow as more people discover its potential for improving quality of life.
                     </p>
@@ -1043,6 +1026,7 @@ const ProductCategory = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </main>
       <Footer />

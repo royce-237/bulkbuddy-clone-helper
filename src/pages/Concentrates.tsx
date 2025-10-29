@@ -52,7 +52,7 @@ const Concentrates = () => {
 
   const handleProductClick = (product: any) => {
     const slug = product.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-    navigate(`/product/${slug}`, { state: { product } });
+    navigate(`/product/${slug}`, { state: { product: { ...product, categories: ["Concentrates"] } } });
   };
 
   return (

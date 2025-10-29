@@ -33,7 +33,7 @@ const testimonials = [
     name: "Sam Boulbol",
     date: "31 March 2025",
     rating: 5,
-    text: "BEST MOM EVER this is by far the best mail order experience ever, hands down. If you don't order from BB than F*ck You...",
+    text: "BEST MOM EVER this is by far the best mail order experience ever, hands down. If you don't order from CG than F*ck You...",
     verified: true,
   },
 ];
