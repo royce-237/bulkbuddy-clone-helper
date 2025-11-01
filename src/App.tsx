@@ -25,6 +25,7 @@ import NotFound from "./pages/NotFound";
 
 import { CartProvider } from "./context/CartContext";
 import { WishlistProvider } from "./context/WishlistContext";
+import SocialProofNotification from "./components/SocialProofNotification";
 
 const queryClient = new QueryClient();
 
@@ -33,7 +34,7 @@ const App = () => (
     <CartProvider>
       <WishlistProvider>
         <TooltipProvider>
-          <Toaster />
+          <Toaster position="bottom-left" />
           <Sonner />
           <HashRouter>
             <Routes>
@@ -56,12 +57,13 @@ const App = () => (
               <Route path="/search" element={<SearchResults />} />
               <Route path="/wishlist" element={<Wishlist />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </HashRouter>
-        </TooltipProvider>
-      </WishlistProvider>
-    </CartProvider>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </HashRouter>
+      <SocialProofNotification />
+    </TooltipProvider>
+   </WishlistProvider>
+   </CartProvider>
   </QueryClientProvider>
 );
 

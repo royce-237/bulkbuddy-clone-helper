@@ -9,656 +9,586 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 export const cannabisProducts = [
-  {
-    id: 1,
-    name: "Chocolate Kush",
-    category: "Indica",
-    priceRange: "$12.00 - $675.00",
-    rating: 5,
-    reviews: 87,
-    image: "https://images.unsplash.com/photo-1605878863885-094e0c3c9fdb?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 2,
-    name: "Chocolate Thunder",
-    category: "Sativa",
-    priceRange: "$12.00 - $22.00",
-    rating: 5,
-    reviews: 166,
-    image: "https://images.unsplash.com/photo-1601739879461-e373f0ff2149?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    category: "Cannabis Flower",
-    priceRange: "$39.00 - $139.00",
-    rating: 4.5,
-    reviews: 487,
-    image: "https://images.unsplash.com/photo-1603909945879-54e78f773dc8?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: 65
-  },
-  {
-    category: "Cannabis Flower",
-    priceRange: "$55.00 - $190.00",
-    rating: 4.5,
-    reviews: 748,
-    image: "https://images.unsplash.com/photo-1612524424827-a0e0c68c1f95?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: 54
-  },
-  {
-    id: 5,
-    name: "9 Pound Hammer",
-    category: "Indica",
-    priceRange: "$12.00",
-    rating: 4.5,
-    reviews: 139,
-    image: "https://images.unsplash.com/photo-1605878864842-d4ab4777c2fc?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 6,
-    name: "94 Monkey",
-    category: "Indica",
-    priceRange: "$12.00 - $725.00",
-    rating: 5,
-    reviews: 170,
-    image: "https://images.unsplash.com/photo-1601739878544-3e04439b83fd?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    category: "Cannabis Flower",
-    priceRange: "$12.00 - $200.00",
-    rating: 5,
-    reviews: 180,
-    image: "https://images.unsplash.com/photo-1560750461-121f1d0afa6e?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    category: "Cannabis Flower",
-    priceRange: "$12.00 - $200.00",
-    rating: 5,
-    reviews: 171,
-    image: "https://images.unsplash.com/photo-1608336979521-9fbb349c2f03?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    category: "Cannabis Flower",
-    priceRange: "$12.00 - $65.00",
-    rating: 4.5,
-    reviews: 133,
-    image: "https://images.unsplash.com/photo-1619094108846-dddbef0deab5?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    category: "Cannabis Flower",
-    priceRange: "$12.00",
-    rating: 4.5,
-    reviews: 18,
-    image: "https://images.unsplash.com/photo-1601739878038-5f58ea0b2faf?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    category: "Cannabis Flower",
-    priceRange: "$12.00 - $200.00",
-    rating: 5,
-    reviews: 50,
-    image: "https://images.unsplash.com/photo-1610295770731-aea59a17fbc6?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    category: "Cannabis Flower",
-    priceRange: "$12.00 - $200.00",
-    rating: 5,
-    reviews: 35,
-    image: "https://images.unsplash.com/photo-1605878863887-3b65932b8bb3?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 13,
-    name: "Ace Killer OG",
-    category: "Indica",
-    priceRange: "$11.00 - $73.00",
-    rating: 5,
-    reviews: 92,
-    image: "https://images.unsplash.com/photo-1603909945879-54e78f773dc8?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 14,
-    name: "Afghan Death Bubba",
-    category: "Indica",
-    priceRange: "$12.00 - $725.00",
-    rating: 5,
-    reviews: 133,
-    image: "https://images.unsplash.com/photo-1612524424827-a0e0c68c1f95?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 15,
-    name: "Alaskan Thunder Fuck",
-    category: "Sativa",
-    priceRange: "$12.00 - $84.00",
-    rating: 5,
-    reviews: 534,
-    image: "https://images.unsplash.com/photo-1605878864842-d4ab4777c2fc?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 16,
-    name: "Alien Banana Candy",
-    category: "Indica",
-    priceRange: "$12.00 - $725.00",
-    rating: 5,
-    reviews: 147,
-    image: "https://images.unsplash.com/photo-1601739878544-3e04439b83fd?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 17,
-    name: "Alien OG",
-    category: "Hybrid",
-    priceRange: "$12.00 - $675.00",
-    rating: 5,
-    reviews: 157,
-    image: "https://images.unsplash.com/photo-1560750461-121f1d0afa6e?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 18,
-    name: "Animal Cookies",
-    category: "Indica",
-    priceRange: "$12.00 - $43.00",
-    rating: 4.5,
-    reviews: 70,
-    image: "https://images.unsplash.com/photo-1608336979521-9fbb349c2f03?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 19,
-    name: "Atomic Blueberry",
-    category: "Indica",
-    priceRange: "$13.00 - $775.00",
-    rating: 4.5,
-    reviews: 187,
-    image: "https://images.unsplash.com/photo-1619094108846-dddbef0deab5?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 20,
-    name: "Atomic Bomb",
-    category: "Hybrid",
-    priceRange: "$12.00 - $40.00",
-    rating: 5,
-    reviews: 135,
-    image: "https://images.unsplash.com/photo-1601739878038-5f58ea0b2faf?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  }
+    {
+        id: 778594,
+        name: "Trap Queen",
+        category: "Hybrid",
+        priceRange: "$135.00 - $265.00",
+        rating: 0,
+        reviews: 0,
+        image: "/GuruImg/imgi_145_Trap-Queen-web-FULL.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 778426,
+        name: "Infatuation",
+        category: "Hybrid",
+        priceRange: "$265.00",
+        rating: 0,
+        reviews: 0,
+        image: "/GuruImg/imgi_156_Inflation-web-FULL.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 697504,
+        name: "Grape OG",
+        category: "Indica",
+        priceRange: "$12.99 - $265.00",
+        rating: 4.79,
+        reviews: 15,
+        image: "/GuruImg/imgi_167_Grape-OG-Web-FULL-1.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 659656,
+        name: "Gas Can",
+        category: "Indica",
+        priceRange: "$12.99 - $265.00",
+        rating: 4.40,
+        reviews: 11,
+        image: "/GuruImg/imgi_178_Gas-Can-web-FULL.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 629552,
+        name: "Crystal Runtz",
+        category: "Hybrid",
+        priceRange: "$12.99 - $265.00",
+        rating: 4.75,
+        reviews: 13,
+        image: "/GuruImg/imgi_189_Crystal-Runtz-web-FULL.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 576916,
+        name: "Cherry Sangria",
+        category: "Hybrid",
+        priceRange: "$12.99 - $265.00",
+        rating: 4.91,
+        reviews: 12,
+        image: "/GuruImg/imgi_200_Cherry-Sangria-web-FULL.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 552032,
+        name: "Lizard Burger",
+        category: "Hybrid",
+        priceRange: "$12.99 - $265.00",
+        rating: 4.73,
+        reviews: 23,
+        image: "/GuruImg/imgi_211_Lizard-Burger-web-FULL.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 527119,
+        name: "Triple Burger",
+        category: "Hybrid",
+        priceRange: "$12.99 - $265.00",
+        rating: 5.00,
+        reviews: 11,
+        image: "/GuruImg/imgi_222_Tripple-Burger-web-FULL.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 497102,
+        name: "Scorpion Tears",
+        category: "Hybrid",
+        priceRange: "$12.99 - $265.00",
+        rating: 4.67,
+        reviews: 10,
+        image: "/GuruImg/imgi_233_Scorpion-Tears-web-FULL-9.29.25-1.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 403890,
+        name: "Mule Fuel",
+        category: "Hybrid",
+        priceRange: "$12.99 - $265.00",
+        rating: 4.97,
+        reviews: 38,
+        image: "/GuruImg/imgi_244_Mule-Fuel-web-FULL-8.4.25.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 383610,
+        name: "Purple Voodoo",
+        category: "Hybrid",
+        priceRange: "$12.99 - $265.00",
+        rating: 4.77,
+        reviews: 32,
+        image: "/GuruImg/imgi_253_Purple-Voodoo-Web.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 231030,
+        name: "Gumbo",
+        category: "Hybrid",
+        priceRange: "$12.99 - $265.00",
+        rating: 4.33,
+        reviews: 10,
+        image: "/GuruImg/imgi_264_Gumbo-9.17.25-web-FULL.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 109246,
+        name: "Lemon Cherry Gelato",
+        category: "Hybrid",
+        priceRange: "$40.00 - $265.00",
+        rating: 4.94,
+        reviews: 67,
+        image: "/GuruImg/imgi_275_LCG-web-FULL.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 646476,
+        name: "Menage",
+        category: "Hybrid",
+        priceRange: "$12.99 - $135.00",
+        rating: 3.80,
+        reviews: 6,
+        image: "/GuruImg/imgi_286_Mirage-web-FULL-1.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 634031,
+        name: "Lemon Cherry Swirl #31",
+        category: "Hybrid",
+        priceRange: "$12.99 - $135.00",
+        rating: 4.60,
+        reviews: 36,
+        image: "/GuruImg/imgi_297_Cherry-Swirl-web-FULL.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 734740,
+        name: "Blue Cookies",
+        category: "Indica",
+        priceRange: "$12.99 - $70.00",
+        rating: 4.84,
+        reviews: 20,
+        image: "/GuruImg/imgi_308_Blue-Cookies-Web-FULL.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 719421,
+        name: "Money Ball",
+        category: "Indica",
+        priceRange: "$70.00",
+        rating: 4.00,
+        reviews: 2,
+        image: "/GuruImg/imgi_319_Money-Ball-web-FULL.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 715596,
+        name: "Cherry Gumbo",
+        category: "Hybrid",
+        priceRange: "$12.99 - $70.00",
+        rating: 4.50,
+        reviews: 5,
+        image: "/GuruImg/imgi_330_Cherry-Gumbo-web-FULL-9.29.25.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 708417,
+        name: "Sweet Retreat",
+        category: "Hybrid",
+        priceRange: "$12.99 - $70.00",
+        rating: 5.00,
+        reviews: 6,
+        image: "/GuruImg/imgi_341_Sweet-Retreat-web-FULL.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 596638,
+        name: "El Chivo",
+        category: "Indica",
+        priceRange: "$12.99 - $70.00",
+        rating: 4.76,
+        reviews: 18,
+        image: "/GuruImg/imgi_352_El-Chivo-web-FULL.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 567812,
+        name: "Super Jack",
+        category: "Sativa",
+        priceRange: "$12.99 - $70.00",
+        rating: 4.64,
+        reviews: 26,
+        image: "/GuruImg/imgi_363_Super-Jam-web-FULL.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 475194,
+        name: "Slurp Juice",
+        category: "Hybrid",
+        priceRange: "$12.99 - $70.00",
+        rating: 4.90,
+        reviews: 32,
+        image: "/GuruImg/imgi_373_Slurp-Juice-Full.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 407220,
+        name: "High Octane Mintz",
+        category: "Hybrid",
+        priceRange: "$12.99 - $70.00",
+        rating: 4.47,
+        reviews: 18,
+        image: "/GuruImg/imgi_384_High-Octane-web-FULL.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 365122,
+        name: "Gush Mintz",
+        category: "Indica",
+        priceRange: "$12.99 - $70.00",
+        rating: 4.79,
+        reviews: 72,
+        image: "/GuruImg/imgi_394_Gush-Mintz-WEB.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 332513,
+        name: "Blueberry Muffin",
+        category: "Indica",
+        priceRange: "$12.99 - $70.00",
+        rating: 4.57,
+        reviews: 8,
+        image: "/GuruImg/imgi_404_Blueberry-Muffin-WEB.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 76829,
+        name: "Gary Payton",
+        category: "Hybrid",
+        priceRange: "$12.99 - $70.00",
+        rating: 4.90,
+        reviews: 68,
+        image: "/GuruImg/imgi_414_Gary-Payton-v2-Strain-WEB.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 691200,
+        name: "Gelato",
+        category: "Hybrid",
+        priceRange: "$40.00",
+        rating: 4.33,
+        reviews: 10,
+        image: "/GuruImg/imgi_425_Gelato-web-8.21.25.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 477039,
+        name: "Grape Candy",
+        category: "Indica",
+        priceRange: "$12.99 - $40.00",
+        rating: 4.75,
+        reviews: 25,
+        image: "/GuruImg/imgi_436_Grape-Candy-web-9.5.25-FULL.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 307221,
+        name: "Sample Pack - High Tolerance",
+        category: "Hybrid",
+        priceRange: "$35.00 - $40.00",
+        rating: 4.82,
+        reviews: 139,
+        image: "/GuruImg/imgi_447_SAMPLE-PACK-PreRollsFlower-WEB_Transparent.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 230396,
+        name: "Hash Burger",
+        category: "Hybrid",
+        priceRange: "$12.99 - $40.00",
+        rating: 4.92,
+        reviews: 65,
+        image: "/GuruImg/imgi_457_Hash-Burger-Strain-WEB.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 632793,
+        name: "Horgurtz",
+        category: "Hybrid",
+        priceRange: "$12.99",
+        rating: 4.75,
+        reviews: 5,
+        image: "/GuruImg/imgi_468_Hogwartz-web-FULL-1.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 596604,
+        name: "Glitter Bomb",
+        category: "Indica",
+        priceRange: "$12.99",
+        rating: 4.81,
+        reviews: 17,
+        image: "/GuruImg/imgi_479_Glitter-Bomb-web-FULL.png",
+        inStock: true,
+        salePercentage: null
+    },
+    {
+        id: 567803,
+        name: "Super Buff Cherry",
+        category: "Hybrid",
+        priceRange: "$12.99",
+        rating: 4.67,
+        reviews: 13,
+        image: "/GuruImg/imgi_490_Sherbaeio-web-FULL.png",
+        inStock: true,
+        salePercentage: null
+    }
 ];
 
 export const concentratesProducts = [
-  {
-    id: 2,
-    name: "9 Pound Hammer Kief",
-    category: "Kief",
-    priceRange: "$14.00 - $82.00",
-    rating: 5,
-    reviews: 98,
-    image: "https://images.unsplash.com/photo-1605878863885-094e0c3c9fdb?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: 18
-  },
-  {
-    id: 1,
-    name: "Chocolate Rain Budder",
-    category: "Budder",
-    priceRange: "$42.00 - $73.00",
-    rating: 5,
-    reviews: 35,
-    image: "https://images.unsplash.com/photo-1608839175115-fa1e9c0e9c0d?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 3,
-    name: "9 Pound Hammer THCa Sugar Diamonds",
-    category: "THCa Diamond",
-    priceRange: "$22.00 - $260.00",
-    rating: 5,
-    reviews: 46,
-    image: "https://images.unsplash.com/photo-1608336979521-9fbb349c2f03?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 4,
-    name: "A-Bomb Budder",
-    category: "Budder",
-    priceRange: "$72.00 - $73.00",
-    rating: 5,
-    reviews: 30,
-    image: "https://images.unsplash.com/photo-1619094108846-dddbef0deab5?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 5,
-    name: "Ace of Spade THCa Sugar",
-    category: "THCa Diamond",
-    priceRange: "$22.00 - $260.00",
-    rating: 4.5,
-    reviews: 28,
-    image: "https://images.unsplash.com/photo-1560750461-121f1d0afa6e?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 6,
-    name: "Bentley Hash",
-    category: "Hash",
-    priceRange: "$10.00 - $641.00",
-    rating: 4.5,
-    reviews: 69,
-    image: "https://images.unsplash.com/photo-1601739878544-3e04439b83fd?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 7,
-    name: "Berry White Shatter",
-    category: "Shatter",
-    priceRange: "$21.00 - $250.00",
-    rating: 4.5,
-    reviews: 14,
-    image: "https://images.unsplash.com/photo-1612524424827-a0e0c68c1f95?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 8,
-    name: "Better Than Bubba Live Resin",
-    category: "Live Resin",
-    priceRange: "$42.00 - $73.00",
-    rating: 5,
-    reviews: 34,
-    image: "https://images.unsplash.com/photo-1608839175115-fa1e9c0e9c0d?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 9,
-    name: "Bio-Jesus Budder",
-    category: "Budder",
-    priceRange: "$22.00 - $260.00",
-    rating: 5,
-    reviews: 36,
-    image: "https://images.unsplash.com/photo-1619094108846-dddbef0deab5?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 10,
-    name: "Black Diamond Kief",
-    category: "Kief",
-    priceRange: "$14.00 - $26.00",
-    rating: 5,
-    reviews: 41,
-    image: "https://images.unsplash.com/photo-1605878863885-094e0c3c9fdb?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: 18
-  },
-  {
-    id: 11,
-    name: "Blue Cheese Live Resin",
-    category: "Live Resin",
-    priceRange: "$42.00 - $73.00",
-    rating: 4.5,
-    reviews: 17,
-    image: "https://images.unsplash.com/photo-1608839175115-fa1e9c0e9c0d?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 12,
-    name: "Blue Cheese Shatter",
-    category: "Shatter",
-    priceRange: "$21.00 - $250.00",
-    rating: 4.5,
-    reviews: 24,
-    image: "https://images.unsplash.com/photo-1612524424827-a0e0c68c1f95?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 13,
-    name: "Blue Gelato Budder",
-    category: "Budder",
-    priceRange: "$42.00 - $73.00",
-    rating: 5,
-    reviews: 24,
-    image: "https://images.unsplash.com/photo-1619094108846-dddbef0deab5?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 14,
-    name: "Blue Zkittlez Budder",
-    category: "Budder",
-    priceRange: "$42.00 - $73.00",
-    rating: 5,
-    reviews: 36,
-    image: "https://images.unsplash.com/photo-1608336979521-9fbb349c2f03?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 15,
-    name: "Princess Leia Live Resin",
-    category: "Live Resin",
-    priceRange: "$42.00 - $73.00",
-    rating: 5,
-    reviews: 41,
-    image: "https://images.unsplash.com/photo-1608839175115-fa1e9c0e9c0d?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 16,
-    name: "Gorilla Glue Hash",
-    category: "Hash",
-    priceRange: "$10.00 - $641.00",
-    rating: 5,
-    reviews: 52,
-    image: "https://images.unsplash.com/photo-1601739878544-3e04439b83fd?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 17,
-    name: "Strawberry Cough Shatter",
-    category: "Shatter",
-    priceRange: "$21.00 - $250.00",
-    rating: 4.5,
-    reviews: 19,
-    image: "https://images.unsplash.com/photo-1612524424827-a0e0c68c1f95?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 18,
-    name: "Wedding Cake Budder",
-    category: "Budder",
-    priceRange: "$42.00 - $73.00",
-    rating: 5,
-    reviews: 42,
-    image: "https://images.unsplash.com/photo-1619094108846-dddbef0deab5?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 19,
-    name: "White Widow Live Resin",
-    category: "Live Resin",
-    priceRange: "$42.00 - $73.00",
-    rating: 5,
-    reviews: 38,
-    image: "https://images.unsplash.com/photo-1608839175115-fa1e9c0e9c0d?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 20,
-    name: "Zombie Kush Distillate",
-    category: "Distillate",
-    priceRange: "$21.00",
-    rating: 4.5,
-    reviews: 15,
-    image: "https://images.unsplash.com/photo-1560750461-121f1d0afa6e?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  }
+    {
+        id: 1,
+        name: "Live Rosin Disposable",
+        category: "Live Rosin",
+        priceRange: "$60.00",
+        potency: "62% - High/Medium Potency",
+        strains: ["Hybrid", "Indica", "Sativa"],
+        rating: 5,
+        reviews: 98,
+        image: "/Online/imgi_78_live-rosin-png.png",
+        inStock: true,
+        salePercentage: 18,
+        url: "https://chronicguru.com/concentrates/live-rosin-disposable/"
+    },
+    {
+        id: 2,
+        name: "THCa Diamonds",
+        category: "THCa Diamond",
+        priceRange: "$40.00",
+        potency: "High Potency",
+        rating: 5,
+        reviews: 46,
+        image: "/Online/imgi_82_diamonds-png.png",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/concentrates/thca-diamonds/"
+    },
+    {
+        id: 3,
+        name: "Hash",
+        category: "Hash",
+        priceRange: "$30.00",
+        potency: "High Potency",
+        rating: 5,
+        reviews: 69,
+        image: "/Online/imgi_104_hash-png.png",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/concentrates/hash/"
+    },
+    {
+        id: 4,
+        name: "CBD Isolate",
+        category: "CBD Isolate",
+        priceRange: "$6.00",
+        potency: "Pure CBD",
+        rating: 5,
+        reviews: 0,
+        image: "/Online/imgi_105_CBD-ISOLATE-9-scaled-150x150.jpg",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/concentrates/cbd-isolate/"
+    },
+    {
+        id: 5,
+        name: "THC Cartridge",
+        category: "THC Cartridge",
+        priceRange: "$35.00",
+        potency: "Low Potency",
+        rating: 5,
+        reviews: 47,
+        image: "/Online/imgi_93_THCA-Cart.png",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/concentrates/thca-cartridge/"
+    }
 ];
 
 export const ediblesProducts = [
-  {
-    id: 1,
-    name: "Almond Crunch Bar Chocolate | 500mg CBD | Keo Edibles",
-    category: "Chocolate",
-    priceRange: "$22.00",
-    rating: 5,
-    reviews: 87,
-    image: "https://images.unsplash.com/photo-1511381939415-e44015466834?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 2,
-    name: "Cookies 'N' Crème Chocolate | 500mg CBD | Keo Edibles",
-    category: "Chocolate",
-    priceRange: "$22.00",
-    rating: 5,
-    reviews: 92,
-    image: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 3,
-    name: "Fruity Pebbles White Chocolate | 500mg CBD | Keo Edibles",
-    category: "Chocolate",
-    priceRange: "$22.00",
-    rating: 5,
-    reviews: 78,
-    image: "https://images.unsplash.com/photo-1511381939415-e44015466834?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 4,
-    name: "THC-Infused Beef Jerky – Bold Flavor Meets Relaxation",
-    category: "Jerky",
-    priceRange: "$20.00",
-    rating: 4.5,
-    reviews: 64,
-    image: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 5,
-    name: "Keo Pops Lollipops | 40mg THC | Keo Edibles",
-    category: "Candy",
-    priceRange: "$5.00",
-    rating: 5,
-    reviews: 124,
-    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 6,
-    name: "CBD Oil Tincture | 5000mg | Keo Edibles",
-    category: "Tincture",
-    priceRange: "$120.00",
-    rating: 5,
-    reviews: 156,
-    image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 7,
-    name: "S'mores Cookie Brownies | 400mg THC | Keo Edibles",
-    category: "Brownie",
-    priceRange: "$22.00",
-    rating: 5,
-    reviews: 89,
-    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 8,
-    name: "1:1 Black Cherry ZzZ Bomb Indica | 1:1 40MG | Twisted Extracts",
-    category: "Gummy",
-    priceRange: "$12.00",
-    rating: 5,
-    reviews: 97,
-    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 9,
-    name: "1:1 Blue Raspberry ZzZ Bomb | Indica | 1:1 40MG | Twisted Extracts",
-    category: "Gummy",
-    priceRange: "$12.00",
-    rating: 5,
-    reviews: 117,
-    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 10,
-    name: "1:1 Cara Melts | Indica | 40mg CBD:THC | Twisted Extracts",
-    category: "Caramel",
-    priceRange: "$13.00",
-    rating: 5,
-    reviews: 57,
-    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 11,
-    name: "1:1 Cara Melts | Sativa | 40mg CBD:THC | Twisted Extracts",
-    category: "Caramel",
-    priceRange: "$13.00",
-    rating: 4.5,
-    reviews: 48,
-    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 12,
-    name: "1:1 Halley's Comet Ganja Jah Bomb | Sativa | Twisted Extracts",
-    category: "Gummy",
-    priceRange: "$12.00",
-    rating: 5,
-    reviews: 85,
-    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: 15
-  },
-  {
-    id: 13,
-    name: "1:1 Halley's Comet Watermelon Jah Bomb | Twisted Extracts",
-    category: "Gummy",
-    priceRange: "$12.00",
-    rating: 4.5,
-    reviews: 71,
-    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: 15
-  },
-  {
-    id: 14,
-    name: "1:1 Mango Jah Bomb | Sativa | 1:1 40MG | Twisted Extracts",
-    category: "Gummy",
-    priceRange: "$12.00",
-    rating: 5,
-    reviews: 103,
-    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 15,
-    name: "1:1 Orange Jah Bomb | Sativa | 1:1 40MG | Twisted Extracts",
-    category: "Gummy",
-    priceRange: "$12.00",
-    rating: 4.5,
-    reviews: 94,
-    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 16,
-    name: "Peach & Grape Puzzle Gummies | 240mg | Keo Edibles",
-    category: "Gummy",
-    priceRange: "$15.00 - $12.00",
-    rating: 5,
-    reviews: 96,
-    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 17,
-    name: "Peach Jelly Bomb | 80mg CBD | Twisted Extracts",
-    category: "Gummy",
-    priceRange: "$13.00",
-    rating: 5,
-    reviews: 84,
-    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 18,
-    name: "Pet CBD Oil Tinctures | 250mg CBD | Keo Edibles",
-    category: "Tincture",
-    priceRange: "$45.00 - $40.00",
-    rating: 5,
-    reviews: 29,
-    image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 19,
-    name: "Pet CBD Oil Tinctures | 500mg CBD | Keo Edibles",
-    category: "Tincture",
-    priceRange: "$56.00 - $50.00",
-    rating: 5,
-    reviews: 33,
-    image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  },
-  {
-    id: 20,
-    name: "Twisted Extract Gummies | Mixed Flavors | 80mg THC",
-    category: "Gummy",
-    priceRange: "$12.00",
-    rating: 5,
-    reviews: 142,
-    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=300&h=300&fit=crop",
-    inStock: true,
-    salePercentage: null
-  }
+    {
+        id: 1,
+        name: "60mg Gummies",
+        category: "Gummy",
+        priceRange: "$45.00",
+        potency: "High Potency",
+        rating: 5,
+        reviews: 0,
+        image: "/Edibles/imgi_90_60MG-Gummies-Top-Down.png",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/edibles/60mg-gummies/"
+    },
+    {
+        id: 2,
+        name: "Sample Pack",
+        category: "Pre-Roll",
+        priceRange: "$35.00 - $40.00",
+        potency: "High Potency",
+        strains: ["Hybrid", "Indica", "Sativa"],
+        rating: 5,
+        reviews: 0,
+        image: "/Edibles/imgi_107_SAMPLE-PACK-PreRollsFlower-WEB_Transparent.png",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/pre-rolls/sample-pack/"
+    },
+    {
+        id: 3,
+        name: "1:1 15mg + 15mg CBG Gummies",
+        category: "Gummy",
+        priceRange: "$25.00 - $35.00",
+        potency: "High Potency",
+        rating: 5,
+        reviews: 0,
+        image: "/Edibles/imgi_109_Guava-Gummy-Top-Down-1-1-1024x1024.png",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/edibles/11-15mg-15cbg-gummies/"
+    },
+    {
+        id: 4,
+        name: "10mg Gummies",
+        category: "Gummy",
+        priceRange: "$20.00 - $35.00",
+        potency: "Low Potency",
+        strains: ["Hybrid", "Sativa"],
+        rating: 5,
+        reviews: 0,
+        image: "/Edibles/imgi_119_Untitled-design-18-1024x1024.png",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/edibles/10mg-gummies/"
+    },
+    {
+        id: 5,
+        name: "30mg Gummies",
+        category: "Gummy",
+        priceRange: "$20.00 - $35.00",
+        potency: "High Potency",
+        rating: 5,
+        reviews: 0,
+        image: "/Edibles/imgi_129_Untitled-design-3-1024x1024.png",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/edibles/30mg-gummies/"
+    },
+    {
+        id: 6,
+        name: "Zaza Brownie",
+        category: "Brownie",
+        priceRange: "$12.00",
+        potency: "High Potency",
+        rating: 5,
+        reviews: 0,
+        image: "/Edibles/imgi_148_Zaza-Brownie-Product-WEB-2.png",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/edibles/zaza-brownie/"
+    },
+    {
+        id: 7,
+        name: "Zaza Cookie",
+        category: "Cookie",
+        priceRange: "$12.00",
+        potency: "High Potency",
+        rating: 5,
+        reviews: 0,
+        image: "/Edibles/imgi_158_Stoned-Chunky-Web-ONE.png",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/edibles/zaza-cookie/"
+    },
+    {
+        id: 8,
+        name: "Pink Lemonade",
+        category: "Drink",
+        priceRange: "$5.00 - $8.00",
+        potency: "30MG | 60MG | 90MG | 150MG",
+        rating: 5,
+        reviews: 0,
+        image: "/Edibles/imgi_168_Pink-Lemonade-WEB.png",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/edibles/pink-lemonade/"
+    },
+    {
+        id: 9,
+        name: "Fruit Punch",
+        category: "Drink",
+        priceRange: "$5.00 - $8.00",
+        potency: "10MG | 30MG | 60MG | 90MG | 150MG",
+        rating: 5,
+        reviews: 0,
+        image: "/Edibles/imgi_178_Fruit-Punch-Product-WEB-1.png",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/edibles/fruit-punch/"
+    },
+    {
+        id: 10,
+        name: "Lemonade",
+        category: "Drink",
+        priceRange: "$5.00 - $8.00",
+        potency: "30MG | 60MG | 90MG | 150MG",
+        rating: 5,
+        reviews: 0,
+        image: "/Edibles/imgi_188_Lemonade-Product-WEB.png",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/edibles/lemonade/"
+    },
+    {
+        id: 11,
+        name: "Iced Tea",
+        category: "Drink",
+        priceRange: "$5.00 - $8.00",
+        potency: "10MG | 30MG | 60MG | 90MG | 150MG",
+        rating: 5,
+        reviews: 0,
+        image: "/Edibles/imgi_198_Iced-Teas-Main-Product-WEB.png",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/edibles/iced-tea/"
+    }
 ];
 
 const ProductCategory = () => {
@@ -805,124 +735,112 @@ const ProductCategory = () => {
                 </div>
               </div>
 
-              {/* Product Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-                {products.map((product) => (
-                  <div
-                    key={product.id}
-                    className="group relative bg-card rounded-lg border hover:shadow-lg transition-all duration-300 overflow-hidden"
-                  >
-                    {/* Wishlist Button */}
-                    <button className="absolute top-3 right-3 z-10 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
-                      <Heart className="w-4 h-4" />
-                    </button>
+              {/* Product Grid and Pagination */}
+              <div>
+                {/* Product Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                  {products.map((product) => (
+                    <div
+                      key={product.id}
+                      className="group relative bg-card rounded-lg border hover:shadow-lg transition-all duration-300 overflow-hidden"
+                    >
+                      {/* Wishlist Button */}
+                      <button className="absolute top-3 right-3 z-10 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                        <Heart className="w-4 h-4" />
+                      </button>
 
-                    {/* Sale Badge */}
-                    {product.salePercentage && (
-                      <div className="absolute top-3 left-3 z-10 bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">
-                        {product.salePercentage}%
-                      </div>
-                    )}
-
-                    {/* Product Image */}
-                    <div className="relative overflow-hidden bg-gray-50 cursor-pointer" onClick={() => handleProductClick(product)}>
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-
-                    {/* Product Info */}
-                    <div className="p-4">
-                      {/* Category Badge */}
-                      {product.category && (
-                        <div className="mb-2">
-                          <span className={`inline-block px-3 py-1 rounded text-xs font-medium text-white ${
-                            product.category === 'Indica' ? 'bg-purple-600' :
-                            product.category === 'Sativa' ? 'bg-orange-500' :
-                            product.category === 'Hybrid' ? 'bg-green-600' :
-                            product.category === 'Budder' ? 'bg-blue-600' :
-                            product.category === 'Shatter' ? 'bg-amber-600' :
-                            product.category === 'Live Resin' ? 'bg-yellow-600' :
-                            product.category === 'Hash' ? 'bg-emerald-600' :
-                            product.category === 'Kief' ? 'bg-lime-600' :
-                            product.category === 'THCa Diamond' ? 'bg-cyan-600' :
-                            product.category === 'Distillate' ? 'bg-rose-600' :
-                            product.category === 'Chocolate' ? 'bg-amber-800' :
-                            product.category === 'Gummy' ? 'bg-pink-500' :
-                            product.category === 'Candy' ? 'bg-fuchsia-500' :
-                            product.category === 'Tincture' ? 'bg-teal-600' :
-                            product.category === 'Brownie' ? 'bg-brown-600' :
-                            product.category === 'Jerky' ? 'bg-red-700' :
-                            product.category === 'Caramel' ? 'bg-yellow-700' :
-                            'bg-gray-500'
-                          }`}>
-                            {product.category}
-                          </span>
+                      {/* Sale Badge */}
+                      {product.salePercentage && (
+                        <div className="absolute top-3 left-3 z-10 bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">
+                          {product.salePercentage}%
                         </div>
                       )}
 
-                      {/* Product Name */}
-                      <h3
-                        className="font-medium text-card-foreground mb-2 text-sm leading-tight line-clamp-2 cursor-pointer hover:text-primary"
-                        onClick={() => handleProductClick(product)}
-                      >
-                        {product.name}
-                      </h3>
-
-                      {/* Rating */}
-                      <div className="flex items-center gap-1 mb-2">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`w-3 h-3 ${
-                              i < Math.floor(product.rating)
-                                ? "fill-yellow-400 text-yellow-400"
-                                : i < product.rating
-                                ? "fill-yellow-400/50 text-yellow-400"
-                                : "text-gray-300"
-                            }`}
-                          />
-                        ))}
-                        <span className="text-xs text-muted-foreground ml-1">
-                          {product.reviews}
-                        </span>
+                      {/* Product Image */}
+                      <div className="relative overflow-hidden bg-gray-50 cursor-pointer" onClick={() => handleProductClick(product)}>
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
                       </div>
 
-                      {/* Price */}
-                      <div className="mb-3">
-                        <span className="font-bold text-foreground text-sm">
-                          {product.priceRange}
-                        </span>
-                      </div>
+                      {/* Product Info */}
+                      <div className="p-4">
+                        {/* Category Badge */}
+                        {product.category && (
+                          <div className="mb-2">
+                            <span className={`inline-block px-3 py-1 rounded text-xs font-medium text-white ${
+                              product.category === 'Indica' ? 'bg-purple-600' :
+                              product.category === 'Sativa' ? 'bg-orange-500' :
+                              product.category === 'Hybrid' ? 'bg-green-600' :
+                              product.category === 'Budder' ? 'bg-blue-600' :
+                              product.category === 'Shatter' ? 'bg-amber-600' :
+                              product.category === 'Live Resin' ? 'bg-yellow-600' :
+                              product.category === 'Hash' ? 'bg-emerald-600' :
+                              product.category === 'Kief' ? 'bg-lime-600' :
+                              product.category === 'THCa Diamond' ? 'bg-cyan-600' :
+                              product.category === 'Distillate' ? 'bg-rose-600' :
+                              product.category === 'Chocolate' ? 'bg-amber-800' :
+                              product.category === 'Gummy' ? 'bg-pink-500' :
+                              product.category === 'Candy' ? 'bg-fuchsia-500' :
+                              product.category === 'Tincture' ? 'bg-teal-600' :
+                              product.category === 'Brownie' ? 'bg-brown-600' :
+                              product.category === 'Jerky' ? 'bg-red-700' :
+                              product.category === 'Caramel' ? 'bg-yellow-700' :
+                              'bg-gray-500'
+                            }`}>
+                              {product.category}
+                            </span>
+                          </div>
+                        )}
 
-                      {/* In Stock Badge */}
-                      <Button
-                        className="w-full bg-green-600 text-white hover:bg-green-700 text-xs h-8"
-                        disabled={!product.inStock}
-                        onClick={() => handleProductClick(product)}
-                      >
-                        {product.inStock ? 'IN STOCK' : 'OUT OF STOCK'}
-                      </Button>
+                        {/* Product Name */}
+                        <h3
+                          className="font-medium text-card-foreground mb-2 text-sm leading-tight line-clamp-2 cursor-pointer hover:text-primary"
+                          onClick={() => handleProductClick(product)}
+                        >
+                          {product.name}
+                        </h3>
+
+                        {/* Rating */}
+                        <div className="flex items-center gap-1 mb-2">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className={`w-3 h-3 ${
+                                i < Math.floor(product.rating)
+                                  ? "fill-yellow-400 text-yellow-400"
+                                  : i < product.rating
+                                  ? "fill-yellow-400/50 text-yellow-400"
+                                  : "text-gray-300"
+                              }`}
+                            />
+                          ))}
+                          <span className="text-xs text-muted-foreground ml-1">
+                            {product.reviews}
+                          </span>
+                        </div>
+
+                        {/* Price */}
+                        <div className="mb-3">
+                          <span className="font-bold text-foreground text-sm">
+                            {product.priceRange}
+                          </span>
+                        </div>
+
+                        {/* In Stock Badge */}
+                        <Button
+                          className="w-full bg-green-600 text-white hover:bg-green-700 text-xs h-8"
+                          disabled={!product.inStock}
+                          onClick={() => handleProductClick(product)}
+                        >
+                          {product.inStock ? 'IN STOCK' : 'OUT OF STOCK'}
+                        </Button>
+                      </div>
                     </div>
-                  </div>
-                ))}
-
-              {/* Pagination */}
-              <div className="flex justify-center gap-2 mt-8">
-                <Button variant="default" className="bg-green-600 hover:bg-green-700 h-10 w-10">
-                  1
-                </Button>
-                <Button variant="outline" className="h-10 w-10">
-                  2
-                </Button>
-                <Button variant="outline" className="h-10 w-10">
-                  3
-                </Button>
-                <Button variant="outline" className="h-10 w-10">
-                  →
-                </Button>
+                  ))}
+                </div>
               </div>
 
               {/* Description */}
@@ -1026,7 +944,6 @@ const ProductCategory = () => {
               </div>
             </div>
           </div>
-        </div>
         </div>
       </main>
       <Footer />

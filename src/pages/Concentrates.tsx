@@ -5,46 +5,72 @@ import { Star } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const products = [
-  {
-    id: 1,
-    name: "Live Rosin",
-    priceRange: "$45.00",
-    rating: 4.81,
-    reviews: 27,
-    image: "/placeholder.svg",
-    inStock: true,
-    badges: ["Hybrid, Indica, Sativa", "🔴 High Potency"],
-  },
-  {
-    id: 2,
-    name: "Diamonds",
-    priceRange: "$40.00",
-    rating: 4.93,
-    reviews: 92,
-    image: "/placeholder.svg",
-    inStock: true,
-    badges: ["🔴 High Potency"]
-  },
-  {
-    id: 3,
-    name: "Premiuim Hash",
-    priceRange: "$30.00",
-    rating: 5.0,
-    reviews: 3,
-    image: "/placeholder.svg",
-    inStock: true,
-    badges: ["🔴 High Potency"],
-  },
-  {
-      id: 3,
-      name: "CBD Isolate Powder",
-      priceRange: "$6.00",
-      rating: 5.0,
-      reviews: 3,
-      image: "/placeholder.svg",
-      inStock: true,
-      badges: [],
-  },
+    {
+        id: 1,
+        name: "Live Rosin Disposable",
+        category: "Live Rosin",
+        priceRange: "$60.00",
+        potency: "62% - High/Medium Potency",
+        strains: ["Hybrid", "Indica", "Sativa"],
+        rating: 5,
+        reviews: 98,
+        image: "/Online/imgi_78_live-rosin-png.png",
+        inStock: true,
+        salePercentage: 18,
+        url: "https://chronicguru.com/concentrates/live-rosin-disposable/"
+    },
+    {
+        id: 2,
+        name: "THCa Diamonds",
+        category: "THCa Diamond",
+        priceRange: "$40.00",
+        potency: "High Potency",
+        rating: 5,
+        reviews: 46,
+        image: "/Online/imgi_82_diamonds-png.png",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/concentrates/thca-diamonds/"
+    },
+    {
+        id: 3,
+        name: "Hash",
+        category: "Hash",
+        priceRange: "$30.00",
+        potency: "High Potency",
+        rating: 5,
+        reviews: 69,
+        image: "/Online/imgi_104_hash-png.png",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/concentrates/hash/"
+    },
+    {
+        id: 4,
+        name: "CBD Isolate",
+        category: "CBD Isolate",
+        priceRange: "$6.00",
+        potency: "Pure CBD",
+        rating: 5,
+        reviews: 0,
+        image: "/Online/imgi_105_CBD-ISOLATE-9-scaled-150x150.jpg",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/concentrates/cbd-isolate/"
+    },
+    {
+        id: 5,
+        name: "THC Cartridge",
+        category: "THC Cartridge",
+        priceRange: "$35.00",
+        potency: "Low Potency",
+        rating: 5,
+        reviews: 47,
+        image: "/Online/imgi_93_THCA-Cart.png",
+        inStock: true,
+        salePercentage: null,
+        url: "https://chronicguru.com/concentrates/thca-cartridge/"
+    }
 ];
 
 const Concentrates = () => {

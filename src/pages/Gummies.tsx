@@ -13,7 +13,7 @@ export const gummiesProducts = [
     priceRange: "$45.00",
     rating: 5,
     reviews: 102,
-    image: "/img/gummies/60MG-Gummies-Top-Down-250x250.png",
+    image: "/Edibles/imgi_90_60MG-Gummies-Top-Down.png",
     inStock: true,
     salePercentage: null,
     badges: ["🔴 High Potency"]
@@ -25,7 +25,7 @@ export const gummiesProducts = [
     priceRange: "$25.00",
     rating: 5,
     reviews: 117,
-    image: "/img/gummies/Untitled-design-18-300x300.png",
+    image: "/Edibles/imgi_109_Guava-Gummy-Top-Down-1-1-1024x1024.png",
     inStock: true,
     salePercentage: null,
     badges: ["Hybrid", "Sativa", "🟢 Low Potency"]
@@ -37,7 +37,7 @@ export const gummiesProducts = [
     priceRange: "$20.00",
     rating: 4.5,
     reviews: 98,
-    image: "/img/gummies/Untitled-design-3-300x300.png",
+    image: "/Edibles/imgi_119_Untitled-design-18-1024x1024.png",
     inStock: true,
     salePercentage: null,
     badges: ["🔴 High Potency"]
@@ -49,7 +49,7 @@ export const gummiesProducts = [
     priceRange: "$20.00",
     rating: 5,
     reviews: 154,
-    image: "/img/gummies/Guava-Gummy-Top-Down-1-1-250x250.png",
+    image: "/Edibles/imgi_129_Untitled-design-3-1024x1024.png",
     inStock: true,
     salePercentage: null,
     badges: ["🔴 High Potency"]
