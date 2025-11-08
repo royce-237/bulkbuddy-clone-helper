@@ -223,9 +223,8 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-2">
               <div className="bg-primary/10 px-3 py-1 rounded text-xs font-medium">E-transfer</div>
-              <div className="flex items-center gap-1 text-orange-500 font-bold text-sm">
-                <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center text-white text-xs">₿</div>
-                <span>bitcoin</span>
+              <div className="flex items-center gap-1 text-sm">
+                <img src="/Edibles/imgi_5_mini-cart-payment-methods.webp" alt="Payment methods" className="h-6" />
               </div>
             </div>
           </div>

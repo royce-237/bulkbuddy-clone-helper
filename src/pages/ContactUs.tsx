@@ -26,12 +26,36 @@ const ContactUs = () => {
     resolver: zodResolver(contactSchema)
   });
 
-  const onSubmit = (data: ContactFormData) => {
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
-    reset();
+  const onSubmit = async (data: ContactFormData) => {
+    try {
+      const response = await fetch("https://formspree.io/f/mzzypeya", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "We'll get back to you as soon as possible.",
+        });
+        reset();
+      } else {
+        toast({
+          title: "Error",
+          description: "There was an error sending your message. Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was an error sending your message. Please try again later.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -75,28 +99,22 @@ const ContactUs = () => {
               </div>
               
               <div>
-                <a href="mailto:info@chronicguru.co" className="text-primary hover:underline">
-                  info@chronicguru.co
+                <a href="mailto:chronicguru5@gmail.com" className="text-primary hover:underline">
+                    info@chronicguru.co
                 </a>
               </div>
 
-              <div className="pt-4">
-                <p className="text-sm text-muted-foreground mb-3">Follow us on social media:</p>
-                <div className="flex gap-3">
-                  <Button variant="outline" size="icon" className="rounded-full">
-                    <Facebook className="h-4 w-4" />
-                  </Button>
-                  <Button variant="outline" size="icon" className="rounded-full">
-                    <Twitter className="h-4 w-4" />
-                  </Button>
-                  <Button variant="outline" size="icon" className="rounded-full">
-                    <MessageCircle className="h-4 w-4" />
-                  </Button>
-                  <Button variant="outline" size="icon" className="rounded-full">
-                    <MessageCircle className="h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
+              {/*<div className="pt-4">*/}
+              {/*  <p className="text-sm text-muted-foreground mb-3">Follow us on social media:</p>*/}
+              {/*  <div className="flex gap-3">*/}
+              {/*    <Button variant="outline" size="icon" className="rounded-full">*/}
+              {/*      <Facebook className="h-4 w-4" />*/}
+              {/*    </Button>*/}
+              {/*    <Button variant="outline" size="icon" className="rounded-full">*/}
+              {/*      <Twitter className="h-4 w-4" />*/}
+              {/*    </Button>*/}
+              {/*  </div>*/}
+              {/*</div>*/}
             </div>
           </div>
 
@@ -159,13 +177,6 @@ const ContactUs = () => {
                 {errors.message && (
                   <p className="text-destructive text-sm mt-1">{errors.message.message}</p>
                 )}
-              </div>
-
-              <div className="flex items-center gap-2">
-                <input type="checkbox" id="human" className="rounded" required />
-                <Label htmlFor="human" className="text-sm">
-                  Vérifiez que vous êtes humain
-                </Label>
               </div>
 
               <Button type="submit" className="bg-primary hover:bg-primary/90">
