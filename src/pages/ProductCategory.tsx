@@ -14,6 +14,12 @@ export const cannabisProducts = [
         name: "Trap Queen",
         category: "Hybrid",
         priceRange: "$135.00 - $265.00",
+        weightPrices: {
+          "3.5 Grams": 135.00,
+          "7 Grams": 180.00,
+          "1/2 Ounce": 220.00,
+          "1 Ounce": 265.00
+        },
         rating: 0,
         reviews: 0,
         image: "/GuruImg/imgi_145_Trap-Queen-web-FULL.png",
@@ -25,6 +31,9 @@ export const cannabisProducts = [
         name: "Infatuation",
         category: "Hybrid",
         priceRange: "$265.00",
+        weightPrices: {
+            "1 Ounce": 265.00
+        },
         rating: 0,
         reviews: 0,
         image: "/GuruImg/imgi_156_Inflation-web-FULL.png",
@@ -35,7 +44,10 @@ export const cannabisProducts = [
         id: 697504,
         name: "Grape OG",
         category: "Indica",
-        priceRange: "$12.99 - $265.00",
+        price: 12.99,
+        weightPrices: {
+            "1 Gram": 12.99
+        },
         rating: 4.79,
         reviews: 15,
         image: "/GuruImg/imgi_167_Grape-OG-Web-FULL-1.png",
@@ -47,6 +59,13 @@ export const cannabisProducts = [
         name: "Gas Can",
         category: "Indica",
         priceRange: "$12.99 - $265.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 45.81,
+            "7 Grams": 88.62,
+            "1/2 Ounce": 165.43,
+            "1 Ounce": 265.00
+        },
         rating: 4.40,
         reviews: 11,
         image: "/GuruImg/imgi_178_Gas-Can-web-FULL.png",
@@ -58,6 +77,13 @@ export const cannabisProducts = [
         name: "Crystal Runtz",
         category: "Hybrid",
         priceRange: "$12.99 - $265.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 51.06,
+            "7 Grams": 88.11,
+            "1/2 Ounce": 164.41,
+            "1 Ounce": 265.00
+        },
         rating: 4.75,
         reviews: 13,
         image: "/GuruImg/imgi_189_Crystal-Runtz-web-FULL.png",
@@ -69,6 +95,13 @@ export const cannabisProducts = [
         name: "Cherry Sangria",
         category: "Hybrid",
         priceRange: "$12.99 - $265.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 48.54,
+            "7 Grams": 89.12,
+            "1/2 Ounce": 176.53,
+            "1 Ounce": 265.00
+        },
         rating: 4.91,
         reviews: 12,
         image: "/GuruImg/imgi_200_Cherry-Sangria-web-FULL.png",
@@ -80,6 +113,13 @@ export const cannabisProducts = [
         name: "Lizard Burger",
         category: "Hybrid",
         priceRange: "$12.99 - $265.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 50.51,
+            "7 Grams": 86.81,
+            "1/2 Ounce": 171.13,
+            "1 Ounce": 265.00
+        },
         rating: 4.73,
         reviews: 23,
         image: "/GuruImg/imgi_211_Lizard-Burger-web-FULL.png",
@@ -91,6 +131,13 @@ export const cannabisProducts = [
         name: "Triple Burger",
         category: "Hybrid",
         priceRange: "$12.99 - $265.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 52.11,
+            "7 Grams": 89.99,
+            "1/2 Ounce": 175.89,
+            "1 Ounce": 265.00
+        },
         rating: 5.00,
         reviews: 11,
         image: "/GuruImg/imgi_222_Tripple-Burger-web-FULL.png",
@@ -102,6 +149,13 @@ export const cannabisProducts = [
         name: "Scorpion Tears",
         category: "Hybrid",
         priceRange: "$12.99 - $265.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 49.14,
+            "7 Grams": 83.21,
+            "1/2 Ounce": 159.93,
+            "1 Ounce": 265.00
+        },
         rating: 4.67,
         reviews: 10,
         image: "/GuruImg/imgi_233_Scorpion-Tears-web-FULL-9.29.25-1.png",
@@ -113,6 +167,13 @@ export const cannabisProducts = [
         name: "Mule Fuel",
         category: "Hybrid",
         priceRange: "$12.99 - $265.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 52.87,
+            "7 Grams": 88.45,
+            "1/2 Ounce": 174.98,
+            "1 Ounce": 265.00
+        },
         rating: 4.97,
         reviews: 38,
         image: "/GuruImg/imgi_244_Mule-Fuel-web-FULL-8.4.25.png",
@@ -124,6 +185,13 @@ export const cannabisProducts = [
         name: "Purple Voodoo",
         category: "Hybrid",
         priceRange: "$12.99 - $265.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 50.11,
+            "7 Grams": 88.82,
+            "1/2 Ounce": 169.11,
+            "1 Ounce": 265.00
+        },
         rating: 4.77,
         reviews: 32,
         image: "/GuruImg/imgi_253_Purple-Voodoo-Web.png",
@@ -135,6 +203,13 @@ export const cannabisProducts = [
         name: "Gumbo",
         category: "Hybrid",
         priceRange: "$12.99 - $265.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 49.99,
+            "7 Grams": 87.12,
+            "1/2 Ounce": 170.21,
+            "1 Ounce": 265.00
+        },
         rating: 4.33,
         reviews: 10,
         image: "/GuruImg/imgi_264_Gumbo-9.17.25-web-FULL.png",
@@ -146,6 +221,12 @@ export const cannabisProducts = [
         name: "Lemon Cherry Gelato",
         category: "Hybrid",
         priceRange: "$40.00 - $265.00",
+        weightPrices: {
+            "3.5 Grams": 40.00,
+            "7 Grams": 104.15,
+            "1/2 Ounce": 186.25,
+            "1 Ounce": 265.00
+        },
         rating: 4.94,
         reviews: 67,
         image: "/GuruImg/imgi_275_LCG-web-FULL.png",
@@ -157,6 +238,12 @@ export const cannabisProducts = [
         name: "Menage",
         category: "Hybrid",
         priceRange: "$12.99 - $135.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 49.01,
+            "7 Grams": 81.03,
+            "1/2 Ounce": 135.00
+        },
         rating: 3.80,
         reviews: 6,
         image: "/GuruImg/imgi_286_Mirage-web-FULL-1.png",
@@ -168,6 +255,12 @@ export const cannabisProducts = [
         name: "Lemon Cherry Swirl #31",
         category: "Hybrid",
         priceRange: "$12.99 - $135.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 48.11,
+            "7 Grams": 80.13,
+            "1/2 Ounce": 135.00
+        },
         rating: 4.60,
         reviews: 36,
         image: "/GuruImg/imgi_297_Cherry-Swirl-web-FULL.png",
@@ -179,6 +272,11 @@ export const cannabisProducts = [
         name: "Blue Cookies",
         category: "Indica",
         priceRange: "$12.99 - $70.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 35.79,
+            "7 Grams": 70.00
+        },
         rating: 4.84,
         reviews: 20,
         image: "/GuruImg/imgi_308_Blue-Cookies-Web-FULL.png",
@@ -190,6 +288,9 @@ export const cannabisProducts = [
         name: "Money Ball",
         category: "Indica",
         priceRange: "$70.00",
+        weightPrices: {
+            "7 Grams": 70.00
+        },
         rating: 4.00,
         reviews: 2,
         image: "/GuruImg/imgi_319_Money-Ball-web-FULL.png",
@@ -201,6 +302,11 @@ export const cannabisProducts = [
         name: "Cherry Gumbo",
         category: "Hybrid",
         priceRange: "$12.99 - $70.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 36.01,
+            "7 Grams": 70.00
+        },
         rating: 4.50,
         reviews: 5,
         image: "/GuruImg/imgi_330_Cherry-Gumbo-web-FULL-9.29.25.png",
@@ -212,6 +318,11 @@ export const cannabisProducts = [
         name: "Sweet Retreat",
         category: "Hybrid",
         priceRange: "$12.99 - $70.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 35.15,
+            "7 Grams": 70.00
+        },
         rating: 5.00,
         reviews: 6,
         image: "/GuruImg/imgi_341_Sweet-Retreat-web-FULL.png",
@@ -223,6 +334,11 @@ export const cannabisProducts = [
         name: "El Chivo",
         category: "Indica",
         priceRange: "$12.99 - $70.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 34.99,
+            "7 Grams": 70.00
+        },
         rating: 4.76,
         reviews: 18,
         image: "/GuruImg/imgi_352_El-Chivo-web-FULL.png",
@@ -234,6 +350,11 @@ export const cannabisProducts = [
         name: "Super Jack",
         category: "Sativa",
         priceRange: "$12.99 - $70.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 35.89,
+            "7 Grams": 70.00
+        },
         rating: 4.64,
         reviews: 26,
         image: "/GuruImg/imgi_363_Super-Jam-web-FULL.png",
@@ -245,6 +366,11 @@ export const cannabisProducts = [
         name: "Slurp Juice",
         category: "Hybrid",
         priceRange: "$12.99 - $70.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 36.11,
+            "7 Grams": 70.00
+        },
         rating: 4.90,
         reviews: 32,
         image: "/GuruImg/imgi_373_Slurp-Juice-Full.png",
@@ -256,6 +382,11 @@ export const cannabisProducts = [
         name: "High Octane Mintz",
         category: "Hybrid",
         priceRange: "$12.99 - $70.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 35.01,
+            "7 Grams": 70.00
+        },
         rating: 4.47,
         reviews: 18,
         image: "/GuruImg/imgi_384_High-Octane-web-FULL.png",
@@ -267,6 +398,11 @@ export const cannabisProducts = [
         name: "Gush Mintz",
         category: "Indica",
         priceRange: "$12.99 - $70.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 35.55,
+            "7 Grams": 70.00
+        },
         rating: 4.79,
         reviews: 72,
         image: "/GuruImg/imgi_394_Gush-Mintz-WEB.png",
@@ -278,6 +414,11 @@ export const cannabisProducts = [
         name: "Blueberry Muffin",
         category: "Indica",
         priceRange: "$12.99 - $70.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 36.21,
+            "7 Grams": 70.00
+        },
         rating: 4.57,
         reviews: 8,
         image: "/GuruImg/imgi_404_Blueberry-Muffin-WEB.png",
@@ -289,6 +430,11 @@ export const cannabisProducts = [
         name: "Gary Payton",
         category: "Hybrid",
         priceRange: "$12.99 - $70.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 35.99,
+            "7 Grams": 70.00
+        },
         rating: 4.90,
         reviews: 68,
         image: "/GuruImg/imgi_414_Gary-Payton-v2-Strain-WEB.png",
@@ -300,6 +446,9 @@ export const cannabisProducts = [
         name: "Gelato",
         category: "Hybrid",
         priceRange: "$40.00",
+        weightPrices: {
+            "3.5 Grams": 40.00
+        },
         rating: 4.33,
         reviews: 10,
         image: "/GuruImg/imgi_425_Gelato-web-8.21.25.png",
@@ -311,6 +460,10 @@ export const cannabisProducts = [
         name: "Grape Candy",
         category: "Indica",
         priceRange: "$12.99 - $40.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 40.00
+        },
         rating: 4.75,
         reviews: 25,
         image: "/GuruImg/imgi_436_Grape-Candy-web-9.5.25-FULL.png",
@@ -322,6 +475,10 @@ export const cannabisProducts = [
         name: "Sample Pack - High Tolerance",
         category: "Hybrid",
         priceRange: "$35.00 - $40.00",
+        weightPrices: {
+            "3.5 Grams": 35.00,
+            "7 Grams": 40.00
+        },
         rating: 4.82,
         reviews: 139,
         image: "/GuruImg/imgi_447_SAMPLE-PACK-PreRollsFlower-WEB_Transparent.png",
@@ -333,6 +490,10 @@ export const cannabisProducts = [
         name: "Hash Burger",
         category: "Hybrid",
         priceRange: "$12.99 - $40.00",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 40.00
+        },
         rating: 4.92,
         reviews: 65,
         image: "/GuruImg/imgi_457_Hash-Burger-Strain-WEB.png",
@@ -344,6 +505,9 @@ export const cannabisProducts = [
         name: "Horgurtz",
         category: "Hybrid",
         priceRange: "$12.99",
+        weightPrices: {
+            "1 Gram": 12.99
+        },
         rating: 4.75,
         reviews: 5,
         image: "/GuruImg/imgi_468_Hogwartz-web-FULL-1.png",
@@ -355,6 +519,9 @@ export const cannabisProducts = [
         name: "Glitter Bomb",
         category: "Indica",
         priceRange: "$12.99",
+        weightPrices: {
+            "1 Gram": 12.99
+        },
         rating: 4.81,
         reviews: 17,
         image: "/GuruImg/imgi_479_Glitter-Bomb-web-FULL.png",
@@ -366,6 +533,9 @@ export const cannabisProducts = [
         name: "Super Buff Cherry",
         category: "Hybrid",
         priceRange: "$12.99",
+        weightPrices: {
+            "1 Gram": 12.99
+        },
         rating: 4.67,
         reviews: 13,
         image: "/GuruImg/imgi_490_Sherbaeio-web-FULL.png",
@@ -387,7 +557,10 @@ export const concentratesProducts = [
         image: "/Online/imgi_78_live-rosin-png.png",
         inStock: true,
         salePercentage: 18,
-        url: "https://chronicguru.com/concentrates/live-rosin-disposable/"
+        url: "https://chronicguru.com/concentrates/live-rosin-disposable/",
+        weightPrices: {
+            "1 Unit": 60.00
+        }
     },
     {
         id: 2,
@@ -400,7 +573,10 @@ export const concentratesProducts = [
         image: "/Online/imgi_82_diamonds-png.png",
         inStock: true,
         salePercentage: null,
-        url: "https://chronicguru.com/concentrates/thca-diamonds/"
+        url: "https://chronicguru.com/concentrates/thca-diamonds/",
+        weightPrices: {
+            "1 Gram": 40.00
+        }
     },
     {
         id: 3,
@@ -413,7 +589,10 @@ export const concentratesProducts = [
         image: "/Online/imgi_104_hash-png.png",
         inStock: true,
         salePercentage: null,
-        url: "https://chronicguru.com/concentrates/hash/"
+        url: "https://chronicguru.com/concentrates/hash/",
+        weightPrices: {
+            "1 Gram": 30.00
+        }
     },
     {
         id: 4,
@@ -426,7 +605,10 @@ export const concentratesProducts = [
         image: "/Online/imgi_105_CBD-ISOLATE-9-scaled-150x150.jpg",
         inStock: true,
         salePercentage: null,
-        url: "https://chronicguru.com/concentrates/cbd-isolate/"
+        url: "https://chronicguru.com/concentrates/cbd-isolate/",
+        weightPrices: {
+            "1 Gram": 6.00
+        }
     },
     {
         id: 5,
@@ -439,7 +621,10 @@ export const concentratesProducts = [
         image: "/Online/imgi_93_THCA-Cart.png",
         inStock: true,
         salePercentage: null,
-        url: "https://chronicguru.com/concentrates/thca-cartridge/"
+        url: "https://chronicguru.com/concentrates/thca-cartridge/",
+        weightPrices: {
+            "1 Unit": 35.00
+        }
     }
 ];
 
@@ -455,7 +640,10 @@ export const ediblesProducts = [
         image: "/Edibles/imgi_90_60MG-Gummies-Top-Down.png",
         inStock: true,
         salePercentage: null,
-        url: "https://chronicguru.com/edibles/60mg-gummies/"
+        url: "https://chronicguru.com/edibles/60mg-gummies/",
+        weightPrices: {
+            "1 Pack": 45.00
+        }
     },
     {
         id: 2,
@@ -469,7 +657,11 @@ export const ediblesProducts = [
         image: "/Edibles/imgi_107_SAMPLE-PACK-PreRollsFlower-WEB_Transparent.png",
         inStock: true,
         salePercentage: null,
-        url: "https://chronicguru.com/pre-rolls/sample-pack/"
+        url: "https://chronicguru.com/pre-rolls/sample-pack/",
+        weightPrices: {
+            "Standard Pack": 35.00,
+            "High Tolerance Pack": 40.00
+        }
     },
     {
         id: 3,
@@ -482,7 +674,11 @@ export const ediblesProducts = [
         image: "/Edibles/imgi_109_Guava-Gummy-Top-Down-1-1-1024x1024.png",
         inStock: true,
         salePercentage: null,
-        url: "https://chronicguru.com/edibles/11-15mg-15cbg-gummies/"
+        url: "https://chronicguru.com/edibles/11-15mg-15cbg-gummies/",
+        weightPrices: {
+            "Small Pack": 25.00,
+            "Large Pack": 35.00
+        }
     },
     {
         id: 4,
@@ -496,7 +692,11 @@ export const ediblesProducts = [
         image: "/Edibles/imgi_119_Untitled-design-18-1024x1024.png",
         inStock: true,
         salePercentage: null,
-        url: "https://chronicguru.com/edibles/10mg-gummies/"
+        url: "https://chronicguru.com/edibles/10mg-gummies/",
+        weightPrices: {
+            "Small Pack": 20.00,
+            "Large Pack": 35.00
+        }
     },
     {
         id: 5,
@@ -509,7 +709,11 @@ export const ediblesProducts = [
         image: "/Edibles/imgi_129_Untitled-design-3-1024x1024.png",
         inStock: true,
         salePercentage: null,
-        url: "https://chronicguru.com/edibles/30mg-gummies/"
+        url: "https://chronicguru.com/edibles/30mg-gummies/",
+        weightPrices: {
+            "Small Pack": 20.00,
+            "Large Pack": 35.00
+        }
     },
     {
         id: 6,
@@ -522,7 +726,10 @@ export const ediblesProducts = [
         image: "/Edibles/imgi_148_Zaza-Brownie-Product-WEB-2.png",
         inStock: true,
         salePercentage: null,
-        url: "https://chronicguru.com/edibles/zaza-brownie/"
+        url: "https://chronicguru.com/edibles/zaza-brownie/",
+        weightPrices: {
+            "1 Unit": 12.00
+        }
     },
     {
         id: 7,
@@ -535,7 +742,10 @@ export const ediblesProducts = [
         image: "/Edibles/imgi_158_Stoned-Chunky-Web-ONE.png",
         inStock: true,
         salePercentage: null,
-        url: "https://chronicguru.com/edibles/zaza-cookie/"
+        url: "https://chronicguru.com/edibles/zaza-cookie/",
+        weightPrices: {
+            "1 Unit": 12.00
+        }
     },
     {
         id: 8,
@@ -548,7 +758,11 @@ export const ediblesProducts = [
         image: "/Edibles/imgi_168_Pink-Lemonade-WEB.png",
         inStock: true,
         salePercentage: null,
-        url: "https://chronicguru.com/edibles/pink-lemonade/"
+        url: "https://chronicguru.com/edibles/pink-lemonade/",
+        weightPrices: {
+            "30MG": 5.00,
+            "150MG": 8.00
+        }
     },
     {
         id: 9,
@@ -561,7 +775,11 @@ export const ediblesProducts = [
         image: "/Edibles/imgi_178_Fruit-Punch-Product-WEB-1.png",
         inStock: true,
         salePercentage: null,
-        url: "https://chronicguru.com/edibles/fruit-punch/"
+        url: "https://chronicguru.com/edibles/fruit-punch/",
+        weightPrices: {
+            "10MG": 5.00,
+            "150MG": 8.00
+        }
     },
     {
         id: 10,
@@ -574,7 +792,11 @@ export const ediblesProducts = [
         image: "/Edibles/imgi_188_Lemonade-Product-WEB.png",
         inStock: true,
         salePercentage: null,
-        url: "https://chronicguru.com/edibles/lemonade/"
+        url: "https://chronicguru.com/edibles/lemonade/",
+        weightPrices: {
+            "30MG": 5.00,
+            "150MG": 8.00
+        }
     },
     {
         id: 11,
@@ -587,7 +809,11 @@ export const ediblesProducts = [
         image: "/Edibles/imgi_198_Iced-Teas-Main-Product-WEB.png",
         inStock: true,
         salePercentage: null,
-        url: "https://chronicguru.com/edibles/iced-tea/"
+        url: "https://chronicguru.com/edibles/iced-tea/",
+        weightPrices: {
+            "10MG": 5.00,
+            "150MG": 8.00
+        }
     }
 ];
 

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Star, Minus, Plus, ShoppingCart, Heart } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useCart } from "../context/CartContext";
 import { useWishlist } from "../context/WishlistContext";
 import { useToast } from "@/components/ui/use-toast";
@@ -26,7 +26,8 @@ const ProductDetail = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [quantity, setQuantity] = useState(1);
-  const [selectedWeight, setSelectedWeight] = useState("3.5 Grams");
+  const [selectedWeight, setSelectedWeight] = useState("");
+  const [unitPrice, setUnitPrice] = useState(0);
   const { addToCart } = useCart();
   const { toast } = useToast();
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
@@ -85,16 +86,34 @@ const ProductDetail = () => {
     return <div>Product not found</div>;
   }
 
-  const priceValue = (() => {
-    const priceString = product.price || product.priceRange;
-    if (typeof priceString === 'string') {
-      return parseFloat(priceString.replace(/[^0-9.]+/g, '')) || 0;
-    }
-    return typeof product.price === 'number' ? product.price : 0;
-  })();
+  useEffect(() => {
+    if (product) {
+      if (product.weightPrices) {
+        const availableWeights = Object.keys(product.weightPrices);
+        const weightToUse = availableWeights.includes(selectedWeight) ? selectedWeight : availableWeights[0];
 
-  const priceDisplay = product.priceRange || `$${priceValue.toFixed(2)}`;
-  const unitPrice = priceValue;
+        if (weightToUse) {
+          if (selectedWeight !== weightToUse) {
+            setSelectedWeight(weightToUse);
+          }
+          setUnitPrice(product.weightPrices[weightToUse]);
+        }
+      } else {
+        // Fallback for products that might still not have weightPrices
+        const priceString = product.price || product.priceRange;
+        if (typeof priceString === 'string') {
+          setUnitPrice(parseFloat(priceString.replace(/[^0-9.]+/g, '')) || 0);
+        } else {
+          setUnitPrice(typeof product.price === 'number' ? product.price : 0);
+        }
+        setSelectedWeight(''); // Reset weight selection
+      }
+    }
+  }, [product, selectedWeight]);
+
+  const handleWeightChange = (weight: string) => {
+    setSelectedWeight(weight);
+  };
 
   const decrementQuantity = () => {
     if (quantity > 1) setQuantity(quantity - 1);
@@ -109,13 +128,13 @@ const ProductDetail = () => {
       const itemId = product.id || Date.now() + Math.random(); // Générer un ID unique si manquant
       addToCart({
         id: itemId,
-        name: product.name,
+        name: `${product.name} - ${selectedWeight}`,
         price: unitPrice,
         image: productImages[0] || '',
       }, quantity); // Passer la quantité sélectionnée
       toast({
         title: "Added to cart!",
-        description: `${product.name} has been added to your cart.`,
+        description: `${product.name} - ${selectedWeight} has been added to your cart.`,
       });
     }
   };
@@ -125,7 +144,7 @@ const ProductDetail = () => {
       const itemId = product.id || Date.now() + Math.random();
       const wishlistItem = {
         id: itemId,
-        name: product.name,
+        name: `${product.name} - ${selectedWeight}`,
         price: unitPrice,
         image: productImages[0] || '',
       };
@@ -241,27 +260,29 @@ const ProductDetail = () => {
 
               {/* Price */}
               <div className="text-3xl font-bold text-foreground">
-                {priceDisplay}
+                ${unitPrice.toFixed(2)}
               </div>
 
-              {/* Weight Selection */}
-              <div>
-                <div className="text-sm font-medium mb-2">Weight: <span className="text-primary">{selectedWeight}</span></div>
-                <div className="flex flex-wrap gap-2">
-                  {weights.map((weight) => (
-                    <Button
-                      key={weight}
-                      variant={selectedWeight === weight ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => setSelectedWeight(weight)}
-                      className="text-xs"
-                    >
-                      {weight}
-                    </Button>
-                  ))}
+              {/* Size Selection */}
+              {product.weightPrices && Object.keys(product.weightPrices).length > 1 && (
+                <div>
+                  <div className="text-sm font-medium mb-2">Size: <span className="text-primary">{selectedWeight}</span></div>
+                  <div className="flex flex-wrap gap-2">
+                    {Object.keys(product.weightPrices).map((weight) => (
+                      <Button
+                        key={weight}
+                        variant={selectedWeight === weight ? "default" : "outline"}
+                        size="sm"
+                        onClick={() => handleWeightChange(weight)}
+                        className="text-xs"
+                      >
+                        {weight}
+                      </Button>
+                    ))}
+                  </div>
+                  <button className="text-sm text-primary mt-2">× Clear</button>
                 </div>
-                <button className="text-sm text-primary mt-2">× Clear</button>
-              </div>
+              )}
 
               {/* Points */}
               <div className="text-sm">

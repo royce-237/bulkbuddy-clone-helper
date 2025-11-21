@@ -14,7 +14,14 @@ export const products = [
         image: "/GuruImg/imgi_156_Inflation-web-FULL.png",
         inStock: true,
         badges: ["Hybrid 25%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/infatuation/"
+        url: "https://chronicguru.com/pre-rolls/infatuation/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 45.81,
+            "7 Grams": 88.62,
+            "1/2 Ounce": 165.43,
+            "1 Ounce": 265.00
+        }
     },
     {
         id: 2,
@@ -25,7 +32,14 @@ export const products = [
         image: "/GuruImg/imgi_167_Grape-OG-Web-FULL-1.png",
         inStock: true,
         badges: ["Indica 22.9%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/grape-og-strain/"
+        url: "https://chronicguru.com/pre-rolls/grape-og-strain/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 51.06,
+            "7 Grams": 88.11,
+            "1/2 Ounce": 164.41,
+            "1 Ounce": 265.00
+        }
     },
     {
         id: 3,
@@ -36,7 +50,14 @@ export const products = [
         image: "/GuruImg/imgi_178_Gas-Can-web-FULL.png",
         inStock: true,
         badges: ["Indica 21.4%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/gas-can/"
+        url: "https://chronicguru.com/pre-rolls/gas-can/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 48.54,
+            "7 Grams": 89.12,
+            "1/2 Ounce": 176.53,
+            "1 Ounce": 265.00
+        }
     },
     {
         id: 4,
@@ -47,7 +68,14 @@ export const products = [
         image: "/GuruImg/imgi_200_Cherry-Sangria-web-FULL.png",
         inStock: true,
         badges: ["Hybrid 24.2%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/cherry-sangria/"
+        url: "https://chronicguru.com/pre-rolls/cherry-sangria/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 50.51,
+            "7 Grams": 86.81,
+            "1/2 Ounce": 171.13,
+            "1 Ounce": 265.00
+        }
     },
     {
         id: 5,
@@ -58,7 +86,14 @@ export const products = [
         image: "/GuruImg/imgi_211_Lizard-Burger-web-FULL.png",
         inStock: true,
         badges: ["Hybrid 18.54%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/lizard-burger/"
+        url: "https://chronicguru.com/pre-rolls/lizard-burger/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 52.11,
+            "7 Grams": 89.99,
+            "1/2 Ounce": 175.89,
+            "1 Ounce": 265.00
+        }
     },
     {
         id: 6,
@@ -69,7 +104,14 @@ export const products = [
         image: "/GuruImg/imgi_222_Tripple-Burger-web-FULL.png",
         inStock: true,
         badges: ["Hybrid 26.25%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/triple-burger/"
+        url: "https://chronicguru.com/pre-rolls/triple-burger/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 49.14,
+            "7 Grams": 83.21,
+            "1/2 Ounce": 159.93,
+            "1 Ounce": 265.00
+        }
     },
     {
         id: 7,
@@ -80,7 +122,14 @@ export const products = [
         image: "/GuruImg/imgi_233_Scorpion-Tears-web-FULL-9.29.25-1.png",
         inStock: true,
         badges: ["Hybrid 21.50%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/scorpion-tears/"
+        url: "https://chronicguru.com/pre-rolls/scorpion-tears/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 52.87,
+            "7 Grams": 88.45,
+            "1/2 Ounce": 174.98,
+            "1 Ounce": 265.00
+        }
     },
     {
         id: 8,
@@ -91,7 +140,14 @@ export const products = [
         image: "/GuruImg/imgi_244_Mule-Fuel-web-FULL-8.4.25.png",
         inStock: true,
         badges: ["Hybrid 24.31%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/mule-fuel/"
+        url: "https://chronicguru.com/pre-rolls/mule-fuel/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 50.11,
+            "7 Grams": 88.82,
+            "1/2 Ounce": 169.11,
+            "1 Ounce": 265.00
+        }
     },
     {
         id: 9,
@@ -102,7 +158,14 @@ export const products = [
         image: "/GuruImg/imgi_253_Purple-Voodoo-Web.png",
         inStock: true,
         badges: ["Hybrid 24.3%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/purple-voodoo/"
+        url: "https://chronicguru.com/pre-rolls/purple-voodoo/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 49.99,
+            "7 Grams": 87.12,
+            "1/2 Ounce": 170.21,
+            "1 Ounce": 265.00
+        }
     },
     {
         id: 10,
@@ -113,7 +176,13 @@ export const products = [
         image: "/GuruImg/imgi_264_Gumbo-9.17.25-web-FULL.png",
         inStock: true,
         badges: ["Hybrid 19.75%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/gumbo/"
+        url: "https://chronicguru.com/pre-rolls/gumbo/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 49.01,
+            "7 Grams": 81.03,
+            "1/2 Ounce": 135.00
+        }
     },
     {
         id: 11,
@@ -124,7 +193,13 @@ export const products = [
         image: "/GuruImg/imgi_286_Mirage-web-FULL-1.png",
         inStock: true,
         badges: ["Hybrid 18.7%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/menage/"
+        url: "https://chronicguru.com/pre-rolls/menage/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 48.11,
+            "7 Grams": 80.13,
+            "1/2 Ounce": 135.00
+        }
     },
     {
         id: 12,
@@ -135,7 +210,12 @@ export const products = [
         image: "/GuruImg/imgi_297_Cherry-Swirl-web-FULL.png",
         inStock: true,
         badges: ["Hybrid 26.9%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/lemon-cherry-swirl-31/"
+        url: "https://chronicguru.com/pre-rolls/lemon-cherry-swirl-31/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 35.79,
+            "7 Grams": 70.00
+        }
     },
     {
         id: 13,
@@ -146,7 +226,12 @@ export const products = [
         image: "/GuruImg/imgi_308_Blue-Cookies-Web-FULL.png",
         inStock: true,
         badges: ["Indica 25.87%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/blue-cookies/"
+        url: "https://chronicguru.com/pre-rolls/blue-cookies/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 36.01,
+            "7 Grams": 70.00
+        }
     },
     {
         id: 14,
@@ -157,7 +242,12 @@ export const products = [
         image: "/GuruImg/imgi_330_Cherry-Gumbo-web-FULL-9.29.25.png",
         inStock: true,
         badges: ["Hybrid 28.4%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/cherry-gumbo-strain/"
+        url: "https://chronicguru.com/pre-rolls/cherry-gumbo-strain/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 35.15,
+            "7 Grams": 70.00
+        }
     },
     {
         id: 15,
@@ -168,7 +258,12 @@ export const products = [
         image: "/GuruImg/imgi_341_Sweet-Retreat-web-FULL.png",
         inStock: true,
         badges: ["Hybrid 26.5%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/sweet-retreat-strain/"
+        url: "https://chronicguru.com/pre-rolls/sweet-retreat-strain/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 34.99,
+            "7 Grams": 70.00
+        }
     },
     {
         id: 16,
@@ -179,7 +274,12 @@ export const products = [
         image: "/GuruImg/imgi_189_Crystal-Runtz-web-FULL.png",
         inStock: true,
         badges: ["Hybrid 27.3%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/cystal-runtz/"
+        url: "https://chronicguru.com/pre-rolls/cystal-runtz/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 35.89,
+            "7 Grams": 70.00
+        }
     },
     {
         id: 17,
@@ -190,7 +290,12 @@ export const products = [
         image: "/GuruImg/imgi_352_El-Chivo-web-FULL.png",
         inStock: true,
         badges: ["Indica 17%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/el-chivo/"
+        url: "https://chronicguru.com/pre-rolls/el-chivo/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 36.11,
+            "7 Grams": 70.00
+        }
     },
     {
         id: 18,
@@ -201,7 +306,12 @@ export const products = [
         image: "/GuruImg/imgi_373_Slurp-Juice-Full.png",
         inStock: true,
         badges: ["Hybrid 23.8%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/slurp-juice/"
+        url: "https://chronicguru.com/pre-rolls/slurp-juice/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 35.01,
+            "7 Grams": 70.00
+        }
     },
     {
         id: 19,
@@ -212,7 +322,12 @@ export const products = [
         image: "/GuruImg/imgi_384_High-Octane-web-FULL.png",
         inStock: true,
         badges: ["Hybrid 26.92%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/high-octane-mintz/"
+        url: "https://chronicguru.com/pre-rolls/high-octane-mintz/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 35.55,
+            "7 Grams": 70.00
+        }
     },
     {
         id: 20,
@@ -223,7 +338,12 @@ export const products = [
         image: "/GuruImg/imgi_394_Gush-Mintz-WEB.png",
         inStock: true,
         badges: ["Indica 29.2%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/gush-mintz/"
+        url: "https://chronicguru.com/pre-rolls/gush-mintz/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 36.21,
+            "7 Grams": 70.00
+        }
     },
     {
         id: 21,
@@ -234,7 +354,11 @@ export const products = [
         image: "/GuruImg/imgi_363_Super-Jam-web-FULL.png",
         inStock: true,
         badges: ["Sativa 24.31%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/super-jack/"
+        url: "https://chronicguru.com/pre-rolls/super-jack/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 40.00
+        }
     },
     {
         id: 22,
@@ -245,7 +369,11 @@ export const products = [
         image: "/GuruImg/imgi_436_Grape-Candy-web-9.5.25-FULL.png",
         inStock: true,
         badges: ["Indica 28%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/grape-candy/"
+        url: "https://chronicguru.com/pre-rolls/grape-candy/",
+        weightPrices: {
+            "1 Gram": 12.99,
+            "3.5 Grams": 40.00
+        }
     },
     {
         id: 23,
@@ -256,7 +384,10 @@ export const products = [
         image: "/GuruImg/imgi_468_Hogwartz-web-FULL-1.png",
         inStock: true,
         badges: ["Hybrid 24.15%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/horgurtz/"
+        url: "https://chronicguru.com/pre-rolls/horgurtz/",
+        weightPrices: {
+            "1 Gram": 12.99
+        }
     },
     {
         id: 24,
@@ -267,7 +398,10 @@ export const products = [
         image: "/GuruImg/imgi_479_Glitter-Bomb-web-FULL.png",
         inStock: true,
         badges: ["Indica 29.16%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/glitter-bomb/"
+        url: "https://chronicguru.com/pre-rolls/glitter-bomb/",
+        weightPrices: {
+            "1 Gram": 12.99
+        }
     },
     {
         id: 25,
@@ -278,7 +412,10 @@ export const products = [
         image: "/GuruImg/imgi_490_Sherbaeio-web-FULL.png",
         inStock: true,
         badges: ["Hybrid 22.11%", "🔴 High Potency"],
-        url: "https://chronicguru.com/pre-rolls/super-buff-cherry/"
+        url: "https://chronicguru.com/pre-rolls/super-buff-cherry/",
+        weightPrices: {
+            "1 Gram": 12.99
+        }
     }
 ];
 
